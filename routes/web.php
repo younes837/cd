@@ -195,3 +195,8 @@ Route::resource('etat', etatController::class,[ 'names' => [
 ]])->middleware('role_Admin');
 
 Route::get('/send',[MailController::class,'sendMail'])->name('sendMail')->middleware('role_Admin');
+
+Route::fallback(function () {
+    return view('content/error');
+});
+Route::get('lang/{locale}', [StaterkitController::class, 'swap']);

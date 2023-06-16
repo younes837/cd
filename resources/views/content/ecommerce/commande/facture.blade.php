@@ -84,7 +84,12 @@
         
               <td class="font-weight-semibold text-dark">{{$item->libelle}}</td>
               <td>{{App\Models\Brand::find($item->brand_id)->name}}</td>
-              <td class="text-center">${{$item->price}}</td>
+              <td class="text-center">@if ($item->promo)
+                <strike class="text-danger">${{$item->price}}</strike>
+                <span class="">${{$item->price-$item->price*($item->promo/100)}}</span></h6>
+              @else
+              ${{$item->price}}
+              @endif</td>
               <td class="text-center">{{$item->quantite}}</td>
               <td class="text-center">${{$item->price*$item->quantite}}</td>
             </tr>

@@ -55,6 +55,7 @@
                 @if ($item->id==$id)
                     
                 <input type="hidden" name="stock" id='stock' value="{{$item->stock}}">
+                <input type="hidden" name="quantite" id='quantite' value="{{$details['quantity']}}">
                 @endif
             @endforeach
           </div>
@@ -162,13 +163,20 @@
   // console.log(ele.val());
   // console.log(stock);
  
-if(ele.val()>stock){
+if(ele.val()> +stock){
   Swal.fire('error!','the quantity is higher than the stock!','error',{
        
        confirmButtonClass: 'btn btn-primary',
        buttonsStyling: !1
      });
-
+     $(this).val($("#quantite").val())
+}else if(ele.val()==0){
+  Swal.fire('error!','the quantity cannot be 0!','error',{
+       
+       confirmButtonClass: 'btn btn-primary',
+       buttonsStyling: !1
+     });
+     $(this).val($("#quantite").val())
 }else{
       $.ajax({
           url: '{{ route('update_cart') }}',

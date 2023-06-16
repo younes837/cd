@@ -65,7 +65,7 @@
                 </div>
               </div>
               <h2 class="fw-bolder mt-1">{{count(App\Models\User::all())}}</h2>
-              <p class="card-text">Users</p>
+              <p class="card-text">{{ __('locale.Users') }}</p>
             </div>
             <div class="user-chart"></div>
           </div>
@@ -81,7 +81,7 @@
                   </div>
                 </div>
                 <h2 class="fw-bolder mt-1">{{count(App\Models\Produit::all())}}</h2>
-                <p class="card-text">Product</p>
+                <p class="card-text">{{ __('locale.Product') }}</p>
               </div>
               <div class="gained-chart"></div>
             </div>
@@ -97,7 +97,7 @@
                 </div>
               </div>
               <h2 class="fw-bolder mt-1">{{count(App\Models\Commande::all())}}</h2>
-              <p class="card-text">Orders Received</p>
+              <p class="card-text">{{ __('locale.Orderes Received') }}</p>
             </div>
             <div class="order-chart"></div>
           </div>
@@ -113,7 +113,7 @@
                 </div>
               </div>
               <h2 class="fw-bolder mt-1">{{count(App\Models\ligneCommande::all())}}</h2>
-              <p class="card-text">Product Ordred</p>
+              <p class="card-text">{{ __('locale.Ordered Product') }}</p>
             </div>
             <div class="product-chart"></div>
           </div>
@@ -130,12 +130,12 @@
                 {{-- <span class="card-subtitle text-muted">Commercial networks and enterprises</span> --}}
               </div>
               <div class="d-flex justify-content-end">
-                <div class="mx-1">
-                
+                <div class="mx-1 form-group">
+                  <label for="" class="">Step</label>
                     <input type="number" class="form-control" id="step" placeholder="Step" value="400">
                 </div>
-                <div>
-                     
+                <div class="form-group">
+                    <label for="">Max</label> 
                     <input type="number" class="form-control"  id="max" placeholder="Max" value="4000">
                 </div>
                 
@@ -163,7 +163,7 @@
               <h4 class="card-title">Categories</h4>
             </div>
             <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
-             <span class="badge rounded-pill bg-success">{{count(App\Models\Produit::all())}} Products</span>
+             <span class="badge rounded-pill bg-success">{{count(App\Models\Produit::all())}} {{ __('locale.Product') }}</span>
             </div>
           </div>
           <div class="card-body">

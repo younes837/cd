@@ -561,7 +561,7 @@ window.colors = {
           $otherList = '',
           $htmlList = '',
           $bookmarkhtmlList = '',
-          $pageList = '<li class="d-flex align-items-center">' + '<a href="#">' + '<h6 class="section-label mt-75 mb-0">Pages</h6>' + '</a>' + '</li>',
+          $pageList = '<li class="d-flex align-items-center">' + '<a href="#">' + '<h6 class="section-label mt-75 mb-0">Products</h6>' + '</a>' + '</li>',
           $activeItemClass = '',
           $bookmarkIcon = '',
           $defaultList = '',

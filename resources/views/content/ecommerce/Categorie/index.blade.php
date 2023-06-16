@@ -37,14 +37,14 @@
             </div>
         @endif
         <div class="card-header">
-          <h4 class="card-title">Categories List</h4>
+          <h4 class="card-title">Categories</h4>
         </div>
         <div class="card-body">
           <div class="modal-size-lg ">
             <!-- Button trigger modal -->
             <div class="d-flex justify-content-end pb-2">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#large">
-                Add Categorie
+                {{ __('locale.Add Categorie') }}
               </button>
             </div>
               <div
@@ -57,7 +57,7 @@
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel17">Add User</h4>
+                    <h4 class="modal-title" id="myModalLabel17">{{ __('locale.Add Categorie') }}</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -66,7 +66,7 @@
                       <div class="row">
                         <div class="col-12">
                           <div class="form-group">
-                            <label for="first-name-column">Categorie Name</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -93,7 +93,7 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th>Brand Name</th>
+                <th>{{ __('locale.Name') }}</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -111,11 +111,11 @@
                               <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editCategorie{{$categorie->id}}">
                                   <i data-feather="edit-2" class="me-50"></i>
-                                  <span>Edit</span>
+                                  <span>{{ __('locale.Edit') }}</span>
                                 </a>                                
                                 <a href="{{ route('Categorie.destroy', $categorie->id) }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $categorie->id }}').submit();">
                                   <i data-feather="trash" class="me-50"></i>
-                                  <span>Delete</span>
+                                  <span>{{ __('locale.Delete') }}</span>
                                 </a>
                               <form id="delete-form-{{ $categorie->id }}" action="{{ route('Categorie.destroy', $categorie->id) }}" method="POST" style="display: none;">
                                   @csrf
@@ -133,7 +133,7 @@
                             </div>
                             <div class="modal-body pb-5 px-sm-5 pt-50">
                               <div class="text-center mb-2">
-                                <h1 class="mb-1">Edit Categorie Information</h1>
+                                <h1 class="mb-1">{{ __('locale.Edit Categorie Information') }}</h1>
                               </div>
                               <form class="form" action="{{route('Categorie.update',$categorie->id)}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -141,7 +141,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
-                                        <label for="first-name-column">Categorie Name</label>
+                                        <label for="first-name-column">{{ __('locale.Name') }}</label>
                                         <input
                                             type="text"
                                             id="first-name-column"

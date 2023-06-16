@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\ligneCommande;
 class Produit extends Model
 {
     use HasFactory;
@@ -16,8 +16,8 @@ class Produit extends Model
         'stock',
         'price',
         'rating',
-        'categorie_id',
-        'favorie','brand_id','propriete_id'
+        'promo',
+        'categorie_id','brand_id','propriete_id'
     ];
     public function users()
     {
@@ -29,5 +29,9 @@ class Produit extends Model
             'id',
             'id'
         );
+    }
+    public function ligneCommandes()
+    {
+        return $this->hasMany(ligneCommande::class);
     }
 }

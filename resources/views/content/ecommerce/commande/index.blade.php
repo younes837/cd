@@ -68,7 +68,7 @@
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">{{$userCounts}}</h4>
-                  <p class="card-text font-small-3 mb-0">Customers</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Customers') }}</p>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">{{count($products)}}</h4>
-                  <p class="card-text font-small-3 mb-0">Products</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Products') }}</p>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@
                   <h4 class="fw-bolder mb-0">{{
                 count($count)
                     }}</h4>
-                  <p class="card-text font-small-3 mb-0">Total Orders</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Total Orderes') }}</p>
                 </div>
               </div>
             </div>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">{{count(App\Models\Commande::where('etat_id',1)->get())}}</h4>
-                  <p class="card-text font-small-3 mb-0">Pending</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Pending') }}</p>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">{{count(App\Models\Commande::where('etat_id',2)->get())}}</h4>
-                  <p class="card-text font-small-3 mb-0">Confirmed</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Confirmed') }}</p>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">{{count(App\Models\Commande::where('etat_id',3)->get())}}</h4>
-                  <p class="card-text font-small-3 mb-0">Rejected</p>
+                  <p class="card-text font-small-3 mb-0">{{ __('locale.Rejected') }}</p>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@
       type="text"
       class="form-control"
       id="search"
-      placeholder="Search..."
+      placeholder="{{ __('locale.Search') }}..."
       aria-label="Search..."
       aria-describedby="basic-addon-search2"
     />
@@ -202,10 +202,10 @@
     <div class="col-4 mb-2 ">
       <form action="" method="GET">
         <select name="" id="status" class="form-control">
-          <option value="all">All</option>
-          <option value="1">Pending</option>
-          <option value="2">Confirmed</option>
-          <option value="3">Rejected</option>
+          <option value="all">{{ __('locale.all') }}</option>
+          <option value="1">{{ __('locale.Pending') }}</option>
+          <option value="2">{{ __('locale.Confimed') }}</option>
+          <option value="3">{{ __('locale.Rejected') }}</option>
         </select>
         
       </form>

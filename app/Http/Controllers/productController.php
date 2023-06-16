@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use App\Models\Propriete;
 use App\Models\Brand;
 use DB;
+use Auth;
 use IlluminateSupportFacadesURL;
 
 
@@ -34,7 +35,7 @@ class productController extends Controller
             ->get()
             ->pluck('count')
             ->all();
-        $products=Produit::paginate(10);
+        $products=Produit::orderBy('price','asc')->paginate(10);
         $categories=Categorie::all();
         $proprietes=Propriete::all();
         $brands=Brand::all();
@@ -82,18 +83,34 @@ class productController extends Controller
         $file = $request->file('photo');
         $name = $request->file('photo')->getClientOriginalName();
         $file->move(public_path('/images/pages/eCommerce/'), $name);
-
-        $data = [
-            'libelle' => $request->libelle,
-            'photo' => "/images/pages/eCommerce/".$name,
-            'description' => $request->description,
-            'stock' => $request->stock,
-            'rating' => $request->rating,
-            'price' => $request->price,
-            'categorie_id' => $request->categorie,
-            'brand_id' => $request->brand,
-            'propriete_id' => $request->propriete,
-        ];
+        if ($request->promo=="") {
+        
+            $data = [
+                'libelle' => $request->libelle,
+                'photo' => "/images/pages/eCommerce/".$name,
+                'description' => $request->description,
+                'stock' => $request->stock,
+                'rating' => $request->rating,
+                'price' => $request->price,
+                'categorie_id' => $request->categorie,
+                'brand_id' => $request->brand,
+                'propriete_id' => $request->propriete,
+                'promo'=>null
+            ];
+        }else{
+            $data = [
+                'libelle' => $request->libelle,
+                'photo' => "/images/pages/eCommerce/".$name,
+                'description' => $request->description,
+                'stock' => $request->stock,
+                'rating' => $request->rating,
+                'price' => $request->price,
+                'categorie_id' => $request->categorie,
+                'brand_id' => $request->brand,
+                'propriete_id' => $request->propriete,
+                'promo'=>$request->promo
+            ];
+        }
        $produit= Produit::create($data);
         $products = json_decode(file_get_contents(public_path('/data/search.json')), true);
         $products['listItems'][]=["id"=>$produit->id,"name"=>$produit->libelle,"url"=> "app/ecommerce/details/".$produit->id,"photo"=>$produit->photo];
@@ -110,6 +127,38 @@ class productController extends Controller
      */
     public function show($id)
     {
+        $pageConfigs = [
+            'showMenu' => true,
+            'pageClass' => 'ecommerce-application',
+           
+        ];
+        $produit = Produit::find($id);
+        $brand = Brand::find($produit->brand_id);
+        $breadcrumbs = [
+            ['link' => '/', 'name' => 'Home'],
+            ['link' => 'javascript:void(0)', 'name' => 'eCommerce'],
+            ['link' => '/app/ecommerce/shop', 'name' => 'Shop'],
+            ['name' => 'Details'],
+        ];
+        $user = Auth::user();
+        if (Auth::check()) {
+            # code...
+            $wishlist = $user->produits;
+            return view('/content/ecommerce/app-ecommerce-details', [
+                'pageConfigs' => $pageConfigs,
+                // 'breadcrumbs' => $breadcrumbs,
+                'wishlist' => $wishlist,
+                'produit' => $produit,
+                'brand' => $brand,
+            ]);
+        }else {
+            return view('/content/ecommerce/app-ecommerce-details', [
+                'pageConfigs' => $pageConfigs,
+                // 'breadcrumbs' => $breadcrumbs,
+                'brand' => $brand,
+                'produit' => $produit,
+            ]);
+        }
     }
 
     /**
@@ -232,12 +281,19 @@ class productController extends Controller
             'brand' => 'required',
         ]);
     
-        
+        $jsonFile = public_path('/data/search.json');
+        $jsonData = file_get_contents($jsonFile);
+        $products = json_decode($jsonData, true);
     
         // Update the product in the database
         if($request->photo === null){
             $prod =Produit::find($id);
             $oldpicture=$prod->photo;
+            if ($request->promo=="") {
+                $prod->promo=null;
+            }else {
+                $prod->promo=$request->promo;
+            }
 
             $prod->libelle = $request->libelle;
             $prod->photo = $oldpicture;
@@ -249,6 +305,12 @@ class productController extends Controller
             $prod->propriete_id = $request->propriete;
             $prod->brand_id = $request->brand;
             $prod->save();
+            foreach ($products['listItems'] as &$item) {
+                if (isset($item['id']) && $item['id'] == $id) {
+                    $item['name'] = $request->libelle;
+                    break;
+                }
+            }
 
         }else{
             $file = $request->file('photo');
@@ -256,6 +318,11 @@ class productController extends Controller
             $file->move(public_path('/images/pages/eCommerce/'), $name);
 
             $prod =Produit::find($id);
+            if ($request->promo=="") {
+                $prod->promo=null;
+            }else {
+                $prod->promo=$request->promo;
+            }
             $prod->libelle = $request->libelle;
             $prod->photo = "/images/pages/eCommerce/".$name;
             $prod->description = $request->description;
@@ -266,20 +333,18 @@ class productController extends Controller
             $prod->propriete_id = $request->propriete;
             $prod->brand_id = $request->brand;
             $prod->save();
+            foreach ($products['listItems'] as &$item) {
+                if (isset($item['id']) && $item['id'] == $id) {
+                    $item['name'] = $request->libelle;
+                    $item['photo'] = "/images/pages/eCommerce/".$name;
+                    break;
+                }
+            }
 
         }
         //json
-        $jsonFile = public_path('/data/search.json');
-        $jsonData = file_get_contents($jsonFile);
-        $products = json_decode($jsonData, true);
+      
     
-        foreach ($products['listItems'] as &$item) {
-            if (isset($item['id']) && $item['id'] == $id) {
-                $item['name'] = $request->libelle;
-                $item['photo'] = "/images/pages/eCommerce/".$name;
-                break;
-            }
-        }
     
         // Save the updated JSON data back to the file
         $newJsonString = json_encode($products);
@@ -329,6 +394,7 @@ class productController extends Controller
                         ->OrWhere('produit.price', 'like', '%' . $search . '%');
                     })
                     ->select('produit.id','produit.libelle','produit.price','produit.photo','produit.rating','produit.stock','produit.categorie_id','produit.brand_id')
+                    ->orderBy('price','asc')
                     ->paginate(10);
                 }else{
             
@@ -346,14 +412,15 @@ class productController extends Controller
                     ->OrWhere('produit.price', 'like', '%' . $search . '%');
                 })
                 ->select('produit.id','produit.libelle','produit.price','produit.photo','produit.rating','produit.stock','produit.categorie_id','produit.brand_id')
-                ->paginate(10);
+                ->orderBy('price','asc')
+                                ->paginate(10);
             }
         }else {
             if ($request->categorie=="all") {
                 $products=Produit::join('categorie','categorie.id','produit.categorie_id')
                 ->join('brand','brand.id','produit.brand_id')
                 ->select('produit.id','produit.libelle','produit.price','produit.photo','produit.rating','produit.stock','produit.categorie_id','produit.brand_id')
-
+                ->orderBy('price','asc')
                 ->paginate(10);
             }else{
         
@@ -364,7 +431,7 @@ class productController extends Controller
                 ->where('produit.categorie_id',  $categorie ); 
             })                
             ->select('produit.id','produit.libelle','produit.price','produit.photo','produit.rating','produit.stock','produit.categorie_id','produit.brand_id')
-
+            ->orderBy('price','asc')
             ->paginate(10);
         }
         }

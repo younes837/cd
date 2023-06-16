@@ -24,7 +24,12 @@
                 </ul>
               </div>
               <div>
-                <h6 class="item-price">${{$produit->price}}</h6>
+                <h6 class="item-price">@if ($produit->promo)
+                  <strike class="text-danger">${{$produit->price}}</strike>
+                  <span class="">${{$produit->price-$produit->price*($produit->promo/100)}}</span></h6>
+                @else
+                ${{$produit->price}}
+                @endif</h6>
               </div>
             </div>
             <h6 class="item-name">

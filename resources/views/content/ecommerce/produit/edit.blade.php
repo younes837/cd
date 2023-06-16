@@ -147,7 +147,7 @@
     <div class="card">
 
             <div class="card-titlle text-center mt-2">
-                <h1>modifier {{$produit->libelle}}</h1>
+                <h1>{{ __('locale.Edit') }} {{$produit->libelle}}</h1>
             </div>
             <div class="card-body">
                 <div class="row my-2">
@@ -167,7 +167,7 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">libelle</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="last-name-column">photo</label>
+                            <label for="last-name-column">{{ __('locale.Picture') }}</label>
                             <input
                               type="file"
                               id="last-name-column"
@@ -193,13 +193,13 @@
                         </div>
                         <div class="col-md-12 col-12">
                           <div class="form-group">
-                            <label for="city-column">descreption</label>
+                            <label for="city-column">Descreption</label>
                             <input type="text" id="descreption-column" class="form-control" placeholder="descreption" name="description" value="{{$produit->libelle}}" />
                           </div>
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="country-floating">stock</label>
+                            <label for="country-floating">Stock</label>
                             <input
                               type="number"
                               id="stock-floating"
@@ -212,7 +212,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="company-column">rating</label>
+                            <label for="company-column">{{ __('locale.Rating') }}</label>
                             <input
                               type="number"
                               id="rating-column"
@@ -226,7 +226,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="email-id-column">price</label>
+                            <label for="email-id-column">{{ __('locale.Price') }}</label>
                             <input
                               type="number"
                               id="price-id-column"
@@ -238,7 +238,7 @@
                           </div>
                         </div>
                       <div class="col-md-6 col-12">
-                        <label class="form-label" for="selectDefault">categorie</label>
+                        <label class="form-label" for="selectDefault">Categorie</label>
                         <select class="form-select " name="categorie" id="selectDefault">
                                     @foreach($categories as $categorie)
                                     <option @if ($categorie->id==$produit->categorie_id)
@@ -248,7 +248,7 @@
                             </select>
                     </div>
                     <div class="col-md-6 col-12">
-                        <label class="form-label" for="selectDefault">propriete</label>
+                        <label class="form-label" for="selectDefault">Propriete</label>
                         <select class="form-select " name="propriete" id="selectDefault">
                                     @foreach($proprietes as $propriete)
                                     <option @if ($propriete->id==$produit->propriete_id)
@@ -258,7 +258,7 @@
                             </select>
                     </div>
                     <div class="col-md-6 col-12">
-                        <label class="form-label" for="selectDefault">brand</label>
+                        <label class="form-label" for="selectDefault">{{ __('locale.Discount') }}</label>
                         <select class="form-select " name="brand" id="selectDefault">
 
                                     @foreach($brands as $brand)
@@ -268,7 +268,18 @@
                                     @endforeach
                             </select>
                     </div>
-
+                    <div class="col-md-12 col-12">
+                      <label class="form-label" for="selectDefault">{{ __('locale.Discount') }} (%)</label>
+                      <input
+                            type="number"
+                            id="price-id-column"
+                            class="form-control"
+                            name="promo"
+                            value="{{$produit->promo}}"
+                            placeholder="Discount"
+                          />
+                          <span class="text-secondary">{{ __('locale.Left this field blank in case there is no discount') }}</span>
+                  </div>
                     </div>
                       <div class="modal-footer d-flex justify-content-center">
                         <button type="submit" rippleEffect class="btn btn-primary mr-1">Submit</button>

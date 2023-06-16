@@ -64,30 +64,30 @@
             <div class="info-container">
               <ul class="list-unstyled">
                 <li class="mb-75">
-                  <span class="fw-bolder me-25">Username:</span>
+                  <span class="fw-bolder me-25">{{ __('locale.Username') }}:</span>
                   <span>{{$user->name}}</span>
                 </li>
                 <li class="mb-75">
-                  <span class="fw-bolder me-25"> Email:</span>
+                  <span class="fw-bolder me-25"> {{ __('locale.Email') }}:</span>
                   <span>{{$user->email}}</span>
                 </li>
            
                 <li class="mb-75">
-                  <span class="fw-bolder me-25">Contact:</span>
+                  <span class="fw-bolder me-25">{{ __('locale.Contact') }}:</span>
                   <span>{{$user->phone}}</span>
                 </li>
                 <li class="mb-75">
-                  <span class="fw-bolder me-25">Ville:</span>
+                  <span class="fw-bolder me-25">{{ __('locale.City') }}:</span>
                   <span>{{App\Models\Ville::find($user->ville_id)->name}}</span>
                 </li>
                 <li class="mb-75">
-                  <span class="fw-bolder me-25">Address:</span>
+                  <span class="fw-bolder me-25">{{ __('locale.Address') }}:</span>
                   <span>{{$user->adress}}</span>
                 </li>
               </ul>
               <div class="d-flex justify-content-center pt-2">
                 <a data-bs-toggle="modal" data-bs-target="#editUser{{$user->id}}" class="btn btn-primary me-1" >
-                  Edit
+                  {{ __('locale.Edit') }}
                 </a>
               </div>
             </div>
@@ -105,17 +105,17 @@
   
         <!-- Project table -->
         <div class="card">
-          <h4 class="card-header">Products Ordred</h4>
+          <h4 class="card-header">{{ __('locale.Products Ordred') }}</h4>
           <div class="table-responsive">
             <table class="table text-center">
               <thead>
                 <tr>
-                  
-                  <th>Product</th>
-                  <th class="text-nowrap">Name</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th>Date</th>
+              
+                  <th>{{ __('locale.Product') }}</th>
+                  <th class="text-nowrap">{{ __('locale.Name') }}</th>
+                  <th>{{ __('locale.Quantity') }}</th>
+                  {{-- <th>Total</th> --}}
+                  <th>{{ __('locale.Date') }}</th>
                 </tr>
               </thead>
               <tbody >
@@ -126,7 +126,7 @@
                 <td><a href="{{url('app/ecommerce/details/'.$commande->id)}}"><img src="{{asset($commande->photo)}}" width="80" heghit="80"></a></td>
                 <td>{{$commande->libelle}}</td>
                 <td >{{$commande->quantite}}</td>
-                <td>${{$commande->total}}</td>
+                {{-- <td>${{$commande->total}}</td> --}}
                 <td>{{$commande->date}}</td>
               </tr>
                 @endforeach
@@ -154,7 +154,7 @@
       </div>
       <div class="modal-body pb-5 px-sm-5 pt-50">
         <div class="text-center mb-2">
-          <h1 class="mb-1">Edit User Information</h1>
+          <h1 class="mb-1">{{ __('locale.Edit User Information') }}</h1>
         </div>
         {{-- start avatar --}}
         <div class="user-avatar-section">
@@ -184,7 +184,7 @@
           <div class="row">
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="first-name-column">  Name</label>
+                <label for="first-name-column">  {{ __('locale.Nom') }}</label>
                 <input
                   type="text"
                   id="first-name-column"
@@ -198,7 +198,7 @@
             </div>
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="last-name-column">email</label>
+                <label for="last-name-column">{{ __('locale.Email') }}</label>
                 <input
                   type="text"
                   id="last-name-column"
@@ -212,13 +212,13 @@
             </div>
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="city-column">avatar</label>
+                <label for="city-column">Avatar</label>
                 <input type="file" id="city-column" class="form-control" placeholder="City" name="avatar" />
               </div>
             </div>
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="country-floating">Password</label>
+                <label for="country-floating">{{ __('locale.Password') }}</label>
                 <input
                   type="Password"
                   id="country-floating"
@@ -232,7 +232,7 @@
             </div>
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="company-column">address</label>
+                <label for="company-column">{{ __('locale.Address') }}</label>
                 <input
                   type="text"
                   id="company-column"
@@ -246,7 +246,7 @@
             </div>
             <div class="col-md-6 col-12">
               <div class="form-group">
-                <label for="email-id-column">Phone</label>
+                <label for="email-id-column">{{ __('locale.Phone') }}</label>
                 <input
                   type="number"
                   id="email-id-column"
@@ -271,7 +271,7 @@
               @endif
             </div> --}}
             <div class="col-md-6 col-12">
-              <label class="form-label" for="selectDefault">Role</label>
+              <label class="form-label" for="selectDefault">{{ __('locale.Role') }}</label>
               <select class="form-select " name="role" id="selectDefault">
                 <option value="">-- Select a Role --</option>
                 @foreach ($roles as $role)
@@ -281,7 +281,7 @@
               </select>
             </div>
             <div class="col-md-6 col-12">
-              <label class="form-label" for="selectDefault">City</label>
+              <label class="form-label" for="selectDefault">{{ __('locale.City') }}</label>
               <select class="form-select " name="ville" id="selectDefault">
                 <option value="">-- Select a City --</option>
                 @foreach ($villes as $ville)

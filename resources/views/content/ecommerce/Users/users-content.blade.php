@@ -1,14 +1,15 @@
 <table class="table table-hover ">
     <thead>
       <tr>
-        <th>Avatar</th>
+        <th>{{ __('locale.Avatar') }}</th>
         {{-- <th>Username</th>
         <th>Email</th> --}}
-        <th>Address</th>
+        <th>{{ __('locale.Address') }}</th>
         {{-- <th>Phone-Number</th> --}}
-        <th>Role</th>
-        <th>City</th>
-        <th>Action</th>
+        <th>{{ __('locale.Role') }}</th>
+        <th>{{ __('locale.City') }}</th>
+        <th>{{ __('locale.Action') }}</th>
+   
       </tr>
     </thead>
     <tbody >

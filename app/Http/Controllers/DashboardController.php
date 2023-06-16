@@ -25,42 +25,42 @@ class DashboardController extends Controller
             ->pluck('count')
             ->all();
         $sales = Commande::join('produit_commande', 'commande.id', '=', 'produit_commande.commande_id')
-    ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
-    ->select(
-        DB::raw('SUM(produit_commande.quantite * produit.price) as sales'),
-        DB::raw("DATE_FORMAT(commande.created_at, '%b') as month")
-    )
-    ->where('commande.etat_id',2)
-    ->groupBy('month')
-    ->orderBy('commande.created_at')
-    ->pluck('sales')
-    ->all();
-    $productSum = Commande::join('produit_commande', 'commande.id', '=', 'produit_commande.commande_id')
-    ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
-    ->select(
-        DB::raw('SUM(produit_commande.quantite) as quantity_sold'),
-        DB::raw("DATE_FORMAT(commande.created_at, '%b') as month")
-    )
-    ->groupBy('month')
-    ->orderBy('commande.created_at')
-    ->get();
-    $commande = DB::table('commande')
-    ->select(DB::raw('COUNT(*) as command_count'), DB::raw("DATE_FORMAT(created_at, '%b') as month"))
-    ->groupBy('month')
-    ->orderBy('created_at')
-    ->get();
-    $commande_count=collect($commande)->pluck('command_count')->all();
-   
-    $quantite = collect($productSum)->pluck('quantity_sold')->all();
-   
-    $months = DB::table('commande')
-    ->join('produit_commande', 'commande.id', '=', 'produit_commande.commande_id')
-    ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
-    ->select(DB::raw("DATE_FORMAT(commande.created_at, '%b') as month"))
-    ->distinct()
-    ->orderBy('commande.created_at')
-    ->pluck('month')
-    ->all();
+            ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
+            ->select(
+                DB::raw('SUM(produit_commande.quantite * produit.price) as sales'),
+                DB::raw("DATE_FORMAT(commande.created_at, '%b') as month")
+            )
+            ->where('commande.etat_id',2)
+            ->groupBy('month')
+            ->orderBy('commande.created_at')
+            ->pluck('sales')
+            ->all();
+        $productSum = Commande::join('produit_commande', 'commande.id', '=', 'produit_commande.commande_id')
+            ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
+            ->select(
+                DB::raw('SUM(produit_commande.quantite) as quantity_sold'),
+                DB::raw("DATE_FORMAT(commande.created_at, '%b') as month")
+            )->where('commande.etat_id',2)
+            ->groupBy('month')
+            ->orderBy('commande.created_at')
+            ->get();
+        $commande = DB::table('commande')
+            ->select(DB::raw('COUNT(*) as command_count'), DB::raw("DATE_FORMAT(created_at, '%b') as month"))
+            ->groupBy('month')
+            ->orderBy('created_at')
+            ->get();
+        $commande_count=collect($commande)->pluck('command_count')->all();
+    
+        $quantite = collect($productSum)->pluck('quantity_sold')->all();
+    
+        $months = DB::table('commande')
+            ->join('produit_commande', 'commande.id', '=', 'produit_commande.commande_id')
+            ->join('produit', 'produit_commande.produit_id', '=', 'produit.id')
+            ->select(DB::raw("DATE_FORMAT(commande.created_at, '%b') as month"))
+            ->distinct()
+            ->orderBy('commande.created_at')
+            ->pluck('month')
+            ->all();
     // return $sales;
         return view('/content/ecommerce/dashboard/dashboard',compact('sales','months',"quantite", 'commande_count','labels','data'));
     }

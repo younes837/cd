@@ -22,10 +22,12 @@
     /* mix-blend-mode: color-burn;
      */
   }
+ 
 </style>
 <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-sliders.css')) }}">
 <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-ecommerce.css')) }}">
 <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
+
 @endsection
 
 @section('content-sidebar')
@@ -39,16 +41,36 @@
       <h6 class="filter-heading d-none d-lg-block">Filters</h6>
     </div>
   </div>
+  
   <div class="card">
     <div class="card-body">
+      <div class="multi-range-price">
+          
+        <ul class="list-unstyled price-range" id="Promotion">
+          <li>
+            <div class="form-check">
+              <input type="radio" id="discount" name="discount" value="all" class="form-check-input" checked  />
+              <label class="form-check-label" >{{ __('locale.all') }}</label>
+            </div>
+          </li>
+          <li>
+            
+            <div class="form-check">
+              <input type="radio" id="discount" name="discount" value="discount" class="form-check-input" />
+              <label class="form-check-label" >{{ __('locale.Discount') }}</label>
+            </div>
+          </li>
+   
+        </ul>
+      </div>
       <!-- Price Filter starts -->
       <div class="multi-range-price">
-        <h6 class="filter-title mt-0">Multi Range</h6>
+        <h6 class="filter-title mt-0">{{ __('locale.Multi Range') }}</h6>
         <ul class="list-unstyled price-range" id="price-range">
           <li>
             <div class="form-check">
               <input type="radio" id="priceAll" name="price-range" value="all" class="form-check-input" checked  />
-              <label class="form-check-label" for="priceAll">All</label>
+              <label class="form-check-label" for="priceAll">{{ __('locale.all') }}</label>
             </div>
           </li>
           <li>
@@ -97,7 +119,7 @@
               <input type="radio" id="all" value="all" name="categorie" class="form-check-input"  @if ($categorie_id=="all")
               checked
           @endif   />
-              <label class="form-check-label" for="all">All</label>
+              <label class="form-check-label" for="all">{{ __('locale.all') }}</label>
             </div>
           </li>
           @foreach($categories as $categorie)
@@ -122,12 +144,12 @@
 
       <!-- Rating starts -->
       <div id="ratings">
-        <h6 class="filter-title">Brands</h6>
+        <h6 class="filter-title">{{ __('locale.Brand') }}</h6>
         <div class="list-unstyled categories-list">
           <li><input type="radio" id="all" value="all" name="brand" class="form-check-input" @if ($brand_id=="all")
               checked
           @endif  />
-            <label class="form-check-label" for="all">All</label>
+            <label class="form-check-label" for="all">{{ __('locale.all') }}</label>
           </li>  @foreach($brand as $item)
           <li>
             <div class="form-check">
@@ -163,7 +185,7 @@
           <button class="navbar-toggler shop-sidebar-toggler" type="button" data-bs-toggle="collapse">
             <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
           </button>
-          <div class="search-results">{{session('length')}} results found</div>
+          <div id="search-results" class="search-results">{{session('length')}} {{ __('locale.results found') }}</div>
         </div>
         <div class="view-options d-flex">
           <div class="btn-group dropdown-sort">
@@ -174,13 +196,13 @@
             aria-haspopup="true"
             aria-expanded="false"
             >
-            <span class="active-sorting">Featured</span>
+            <span class="active-sorting">Default</span>
           </button>
           
           <div class="dropdown-menu" id="sort">
-            <a class="dropdown-item" id="featured"href="#">Featured</a>
-            <a class="dropdown-item" id="lowest"  href="#">Lowest</a>
-            <a class="dropdown-item" id="highest" href="#">Highest</a>
+            <a class="dropdown-item" id="featured"href="#">Default</a>
+            <a class="dropdown-item" id="lowest"  href="#">Oldest</a>
+            <a class="dropdown-item" id="highest" href="#">Newest</a>
           </div>
       
         </div>
@@ -214,7 +236,7 @@
           type="text"
           class="form-control search-product"
           id="search"
-          placeholder="Search Product"
+          placeholder="{{ __('locale.Search Product') }}"
           aria-label="Search..."
           aria-describedby="shop-search"
           />
@@ -357,7 +379,8 @@ $(document).on('click', '.pagination a', function(event){
  var brand = $('input[name="brand"]:checked').val();
 //  var categorie=$("#hidden_categorie").val()
 //  var brand=$("#hidden_brand").val()
- fetch_data(page,query,price,sort,categorie,brand);
+var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 });
 $('input:radio[name="price-range"]').change(function(){
   var price = $('input[name="price-range"]:checked').val();
@@ -374,7 +397,8 @@ $('input:radio[name="price-range"]').change(function(){
 var categorie = $('input[name="categorie"]:checked').val();
 //  var brand=$("#hidden_brand").val()
 var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 
  
 })
@@ -393,12 +417,13 @@ $(document).on('keyup', '#search', function(){
   console.log(categorie);
   // var brand=$("#hidden_brand").val()
   var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
       });
 
       
 $(document).on('click', '#lowest', function(){
-  $('.active-sorting').text('Lowest')
+  $('.active-sorting').text('Oldest')
   var price = $('input[name="price-range"]:checked').val();
   var query=$('#search').val();
   var page=$('#hidden_page').val();
@@ -409,11 +434,12 @@ $(document).on('click', '#lowest', function(){
   var categorie = $('input[name="categorie"]:checked').val();
   // var brand=$("#hidden_brand").val()
   var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 
 });
 $(document).on('click', '#highest', function(){
-  $('.active-sorting').text('Highest')
+  $('.active-sorting').text('Newest')
   var price = $('input[name="price-range"]:checked').val();
   var query=$('#search').val();
   var page=$('#hidden_page').val();
@@ -424,10 +450,11 @@ $(document).on('click', '#highest', function(){
   var categorie = $('input[name="categorie"]:checked').val();
   // var brand=$("#hidden_brand").val()
   var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 });
 $(document).on('click', '#featured', function(){
-  $('.active-sorting').text('Featured')
+  $('.active-sorting').text('Default')
   var price = $('input[name="price-range"]:checked').val();
   var query=$('#search').val();
   var page=$('#hidden_page').val();
@@ -438,7 +465,8 @@ $(document).on('click', '#featured', function(){
   var categorie = $('input[name="categorie"]:checked').val();
   // var brand=$("#hidden_brand").val()
   var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 
 });
 $('input:radio[name="categorie"]').change(function(){
@@ -454,7 +482,8 @@ $('input:radio[name="categorie"]').change(function(){
   $("#hidden_categorie").val(categorie)
   // var brand=$("#hidden_brand").val()
   var brand = $('input[name="brand"]:checked').val();
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 
 
 });
@@ -470,20 +499,37 @@ $('input:radio[name="brand"]').change(function(){
   var sort=$("#hidden_sort_type").val()
   $("#hidden_sort_type").val(sort)
   $("#hidden_categorie").val(categorie)
-
- fetch_data(page,query,price,sort,categorie,brand);
+  var promo = $('input[name="discount"]:checked').val();
+  fetch_data(page,query,price,sort,categorie,brand,promo);
 
 
 });
+$('input:radio[name="discount"]').change(function(){
+  var promo = $('input[name="discount"]:checked').val();
+  var price = $('input[name="price-range"]:checked').val();
+  var categorie = $('input[name="categorie"]:checked').val();
+  var brand = $('input[name="brand"]:checked').val();
+  var query=$('#search').val();
+  var page=$('#hidden_page').val();
+  var price = $('input[name="price-range"]:checked').val();
+  var sort=$("#hidden_sort_type").val()
+  $("#hidden_sort_type").val(sort)
+  $("#hidden_categorie").val(categorie)
+  fetch_data(page,query,price,sort,categorie,brand,promo);
+})
 
-function fetch_data(page,query,price,sort,categorie,brand)
+
+function fetch_data(page,query,price,sort,categorie,brand,promo)
 {
  $.ajax({
-  url:"/app/ecommerce/shop/search?page="+page+'&query='+query+'&price='+price+'&sort='+sort+'&categorie='+categorie+'&brand='+brand,
+  url:"/app/ecommerce/shop/search?page="+page+'&query='+query+'&price='+price+'&sort='+sort+'&categorie='+categorie+'&brand='+brand+'&promo='+promo,
   success:function(data)
   {
     // console.log(data);
     $('#ecommerce-products').html(data);
+    var tot=$('#count-product').val()
+    console.log(tot);
+    $('#search-results').text(tot+" results found")
     feather.replace();
    
   }

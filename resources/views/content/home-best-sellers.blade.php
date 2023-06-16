@@ -1,4 +1,4 @@
-@foreach ($produits2 as $produit )
+@foreach ($bestSellingProduct as $produit )
        
       <div class="qodef-e swiper-slide qodef-item--full ">
         <div class="card ecommerce-card">

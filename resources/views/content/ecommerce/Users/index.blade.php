@@ -40,7 +40,7 @@
               <div class="card-body d-flex align-items-center justify-content-between">
                 <div>
                   <h3 class="fw-bolder mb-75">{{$users->total()}}</h3>
-                  <span>Total Users</span>
+                  <span>{{ __('locale.Total Users') }}</span>
                 </div>
                 <div class="avatar bg-light-primary p-50">
                   <span class="avatar-content">
@@ -55,7 +55,7 @@
               <div class="card-body d-flex align-items-center justify-content-between">
                 <div>
                   <h3 class="fw-bolder mb-75">{{count(App\Models\User::where('role_id',2)->get())}}</h3>
-                  <span>Users</span>
+                  <span>{{ __('locale.Users') }}</span>
                 </div>
                 <div class="avatar bg-light-info p-50">
                   <span class="avatar-content">
@@ -104,13 +104,13 @@
           <div class="modal-size-lg ">
             <!-- Button trigger modal -->
             <div class="row mb-2">
-              <div class="col-6"></div>
+              <div class="col-4"></div>
               <div class="col-4 ">
-                <input id="search" class="form-control" type="text" placeholder="Search" />
+                <input id="search" class="form-control" type="text" placeholder="{{ __('locale.Search') }}" />
               </div>
-              <div class="col-2 ">
+              <div class="col-4  ">
                 <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#large">
-                  Add User
+                  {{ __('locale.Add User') }}
                 </button>
               </div>
             </div>
@@ -124,7 +124,7 @@
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel17">Add User</h4>
+                    <h4 class="modal-title" id="myModalLabel17">{{ __('locale.Add User') }}</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -133,12 +133,12 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">  Name</label>
+                            <label for="first-name-column">  {{ __('locale.nom') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
                               class="form-control"
-                              placeholder="Name"
+                              placeholder="{{ __('locale.nom') }}"
                               name="name"
                             />
                             @if ($errors->has('name'))
@@ -148,12 +148,12 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="last-name-column">email</label>
+                            <label for="last-name-column">{{ __('locale.Email') }}</label>
                             <input
                               type="text"
                               id="last-name-column"
                               class="form-control"
-                              placeholder="email"
+                              placeholder="{{ __('locale.Email') }}"
                               name="email"
                             />
                             @if ($errors->has('email'))
@@ -163,18 +163,18 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="city-column">avatar</label>
-                            <input type="file" id="city-column" class="form-control" placeholder="City" name="avatar" />
+                            <label for="city-column">Avatar</label>
+                            <input type="file" id="city-column" class="form-control" placeholder="Avatar" name="avatar" />
                           </div>
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="country-floating">Password</label>
+                            <label for="country-floating">{{ __('locale.Password') }}</label>
                             <input
                               type="Password"
                               id="country-floating"
                               class="form-control"
-                              name="password"
+                              name="{{ __('locale.Password') }}"
                               placeholder="Password"
                             />
                             @if ($errors->has('password'))
@@ -184,12 +184,12 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="company-column">address</label>
+                            <label for="company-column">{{ __('locale.Address') }}</label>
                             <input
                               type="text"
                               id="company-column"
                               class="form-control"
-                              name="address"
+                              name="{{ __('locale.Address') }}"
                               placeholder="address"
                             />
                             @if ($errors->has('address'))
@@ -199,12 +199,12 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="email-id-column">Phone</label>
+                            <label for="email-id-column">{{ __('locale.Phone') }}</label>
                             <input
                               type="number"
                               id="email-id-column"
                               class="form-control"
-                              name="phone"
+                              name="{{ __('locale.Phone') }}"
                               placeholder="phone"
                             />
                             @if ($errors->has('phone'))
@@ -213,8 +213,9 @@
                           </div>
                         </div>
                         <div class="col-md-6 col-12">
-                          <label class="form-label" for="select2-basic">City</label>
+                          <label class="form-label" for="select2-basic">{{ __('locale.City') }}</label>
                           <select class="select2 form-select form-control" name="ville" id="select2-basic">
+                            <option value="">-- Select a City --</option>
                             @foreach ($villes as $ville)
                             <option value="{{$ville->id}}">{{$ville->name}}</option>
                             @endforeach
@@ -224,9 +225,9 @@
                         @endif
                         </div>
                         <div class="col-md-6 col-12">
-                          <label class="form-label" for="selectDefault">Role</label>
+                          <label class="form-label" for="selectDefault">{{ __('locale.Role') }}</label>
                           <select class="form-select " name="role" id="selectDefault">
-                              <option value=""></option>
+                              <option value="">-- Select a Role --</option>
                                       @foreach($roles as $role)
                                       <option value="{{$role->id}}">{{$role->libelle}}</option>
                                       @endforeach

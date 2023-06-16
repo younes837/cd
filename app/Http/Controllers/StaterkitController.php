@@ -26,25 +26,37 @@ class StaterkitController extends Controller
             'pageClass' => 'ecommerce-application',
             'mainLayoutType' => 'horizontal',
         ];
-        $produits=Produit::all()->take(4);
+        $produits=Produit::latest()->take(4)->get();
+        $produits2=Produit::where('rating',5)->get();
+       
+        $bestSellingProduct = Produit::select('produit.*')
+            ->join('produit_commande', 'produit_commande.produit_id', '=', 'produit.id')
+            ->join('commande', 'produit_commande.commande_id', '=', 'commande.id')
+            ->where('commande.etat_id',2)
+            ->groupBy('produit.id', 'produit.libelle','produit.photo','produit.promo','produit.stock','produit.price','produit.rating','produit.categorie_id','produit.brand_id','produit.propriete_id','produit.description','produit.created_at','produit.updated_at')
+            ->orderByRaw('SUM(produit_commande.quantite) DESC')
+            ->take(10)
+            ->get();
+
         if (Auth::check()) {
            
             $user = Auth::user();
             $wishlist = $user->produits;
-            $produits2=Produit::all()->take(6);
             return view('/content/home', [
                 // 'breadcrumbs' => $breadcrumbs,
                 "produits"=>$produits,
                 "produits2"=>$produits2,
                 "wishlist"=>$wishlist,
+                "bestSellingProduct"=>$bestSellingProduct,
                 'pageConfigs' => $pageConfigs,
             ]);
         }else {
-            $produits2=Produit::all()->take(6);
+            
             return view('/content/home', [
                 // 'breadcrumbs' => $breadcrumbs,
                 "produits"=>$produits,
                 "produits2"=>$produits2,
+                "bestSellingProduct"=>$bestSellingProduct,
              
                 'pageConfigs' => $pageConfigs,
             ]);
@@ -63,11 +75,12 @@ class StaterkitController extends Controller
             $price = $request->get('price');
             $sort = $request->get('sort');
             $brand = $request->get('brand');
+            $promo = $request->get('promo');
             $brandChamp='brand_id';
             if ($sort == 'asc') {
-                $sortedby = 'price';
+                $sortedby = 'created_at';
             } elseif ($sort == 'desc') {
-                $sortedby = 'price';
+                $sortedby = 'created_at';
             } else {
                 $sortedby = 'id';
                 $sort = 'asc';
@@ -83,129 +96,256 @@ class StaterkitController extends Controller
                 $brand=null;
                 $brandChamp=null;
             }
-            if ($query != '') {
-                if ($price == 'all') {
-                    $produits = DB::table('produit')
-                        ->where($cat, $categorie)
-                        ->where(function ($q) use ($query,$brand,$brandChamp) {
-                            $q
-                                ->where('libelle', 'like', '%' . $query . '%')
-                                ->where($brandChamp,$brand)
-                                ;
-                        })
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '100') {
-                    $produits = DB::table('produit')
-                        ->where(function ($q) use ($query, $cat, $categorie) {
-                            $q
 
-                                ->where('price', '<=', 100)
-                                ->where($cat, $categorie);
-                        })
-                        ->where(function ($q) use ($query,$brand,$brandChamp) {
-                            $q
-                                ->where('libelle', 'like', '%' . $query . '%')
-                                ->Where($brandChamp,$brand)
-                                ;
-                        })
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '100-1000') {
-                    $produits = DB::table('produit')
-                        ->where(function ($q) use ($cat, $categorie) {
-                            $q
-                                ->where($cat, $categorie)
-                                ->where('price', '<=', 1000)
-                                ->where('price', '>=', 100);
-                        })
-                        ->where(function ($q) use ($query,$brand,$brandChamp) {
-                            $q
-                                ->where('libelle', 'like', '%' . $query . '%')
-                                ->Where($brandChamp,$brand)
-                                ;
-                        })
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '1000-5000') {
-                    $produits = DB::table('produit')
-                        ->where(function ($q) use ($cat, $categorie) {
-                            $q
-                                ->where($cat, $categorie)
-                                ->where('price', '<=', 5000)
-                                ->where('price', '>=', 1000);
-                        })
-                        ->where(function ($q) use ($query,$brand,$brandChamp) {
-                            $q
-                                ->where('libelle', 'like', '%' . $query . '%')
-                                ->Where($brandChamp,$brand)
-                                ;
-                        })
+            if ($promo=="all") {
+           
+                if ($query != '') {
+                    if ($price == 'all') {
+                        $produits = DB::table('produit')
+                            ->where($cat, $categorie)
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->where($brandChamp,$brand)
+                                    ;
+                            })
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($query, $cat, $categorie) {
+                                $q
 
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '5000') {
-                    $produits = DB::table('produit')
-                        ->where(function ($q) use ($query, $cat, $categorie) {
-                            $q
-                                ->where('price', '>=', 5000)
-                                ->where($cat, $categorie);
-                        })
+                                    ->where('price', '<=', 100)
+                                    ->where($cat, $categorie);
+                            })
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand);
+                            })
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100-1000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($cat, $categorie) {
+                                $q
+                                    ->where($cat, $categorie)
+                                    ->where('price', '<=', 1000)
+                                    ->where('price', '>=', 100);
+                            })
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '1000-5000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($cat, $categorie) {
+                                $q
+                                    ->where($cat, $categorie)
+                                    ->where('price', '<=', 5000)
+                                    ->where('price', '>=', 1000);
+                            })
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })
 
-                        ->where(function ($q) use ($query,$brand,$brandChamp) {
-                            $q
-                                ->where('libelle', 'like', '%' . $query . '%')
-                                ->Where($brandChamp,$brand)
-                                ;
-                        })
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '5000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($query, $cat, $categorie) {
+                                $q
+                                    ->where('price', '>=', 5000)
+                                    ->where($cat, $categorie);
+                            })
+
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    }
+                    $total_row = $produits->total();
+                    session()->put('length', $total_row);
+                } else {
+                    $produits = DB::table('produit')->paginate(9);
+
+                    if ($price == 'all') {
+                        $produits = DB::table('produit')
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 100)
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100-1000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 1000)
+                            ->where('price', '>=', 100)
+                            ->where($brandChamp, $brand)
+                            ->where($cat, $categorie)
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '1000-5000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 5000)
+                            ->where('price', '>=', 1000)
+                            ->where($brandChamp, $brand)
+                            ->where($cat, $categorie)
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '5000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '>=', 5000)
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    }
+                    $total_row = $produits->total();
+                    session()->put('length', $total_row);
                 }
-                $total_row = $produits->total();
-                session()->put('length', 0);
-            } else {
-                $produits = DB::table('produit')->paginate(9);
+            }else{
+                if ($query != '') {
+                    if ($price == 'all') {
+                        $produits = DB::table('produit')
+                            ->where($cat, $categorie)
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->where($brandChamp,$brand)
+                                    ;
+                            })->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($query, $cat, $categorie) {
+                                $q
 
-                if ($price == 'all') {
-                    $produits = DB::table('produit')
-                        ->where($cat, $categorie)
-                        ->where($brandChamp, $brand)
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '100') {
-                    $produits = DB::table('produit')
-                        ->where('price', '<=', 100)
-                        ->where($cat, $categorie)
-                        ->where($brandChamp, $brand)
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '100-1000') {
-                    $produits = DB::table('produit')
-                        ->where('price', '<=', 1000)
-                        ->where('price', '>=', 100)
-                        ->where($brandChamp, $brand)
-                        ->where($cat, $categorie)
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '1000-5000') {
-                    $produits = DB::table('produit')
-                        ->where('price', '<=', 5000)
-                        ->where('price', '>=', 1000)
-                        ->where($brandChamp, $brand)
-                        ->where($cat, $categorie)
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
-                } elseif ($price == '5000') {
-                    $produits = DB::table('produit')
-                        ->where('price', '>=', 5000)
-                        ->where($cat, $categorie)
-                        ->where($brandChamp, $brand)
-                        ->orderBy($sortedby, $sort)
-                        ->paginate(9);
+                                    ->where('price', '<=', 100)
+                                    ->where($cat, $categorie);
+                            })->whereNotNull('promo')
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand);
+                            })
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100-1000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($cat, $categorie) {
+                                $q
+                                    ->where($cat, $categorie)
+                                    ->where('price', '<=', 1000)
+                                    ->where('price', '>=', 100);
+                            })
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '1000-5000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($cat, $categorie) {
+                                $q
+                                    ->where($cat, $categorie)
+                                    ->where('price', '<=', 5000)
+                                    ->where('price', '>=', 1000);
+                            })
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })->whereNotNull('promo')
+
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '5000') {
+                        $produits = DB::table('produit')
+                            ->where(function ($q) use ($query, $cat, $categorie) {
+                                $q
+                                    ->where('price', '>=', 5000)
+                                    ->where($cat, $categorie);
+                            })
+
+                            ->where(function ($q) use ($query,$brand,$brandChamp) {
+                                $q
+                                    ->where('libelle', 'like', '%' . $query . '%')
+                                    ->Where($brandChamp,$brand)
+                                    ;
+                            })->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    }
+                    $total_row = $produits->total();
+                    session()->put('length', $total_row);
+                } else {
+                    $produits = DB::table('produit')->paginate(9);
+
+                    if ($price == 'all') {
+                        $produits = DB::table('produit')
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 100)
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '100-1000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 1000)
+                            ->where('price', '>=', 100)
+                            ->where($brandChamp, $brand)
+                            ->where($cat, $categorie)->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '1000-5000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '<=', 5000)
+                            ->where('price', '>=', 1000)
+                            ->where($brandChamp, $brand)
+                            ->where($cat, $categorie)->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    } elseif ($price == '5000') {
+                        $produits = DB::table('produit')
+                            ->where('price', '>=', 5000)
+                            ->where($cat, $categorie)
+                            ->where($brandChamp, $brand)->whereNotNull('promo')
+                            ->orderBy($sortedby, $sort)
+                            ->paginate(9);
+                    }
+                    $total_row = $produits->total();
+                    session()->put('length', $total_row);
                 }
-                $total_row = $produits->total();
-                session()->put('length', 0);
             }
+            
             if (Auth::check()) {
                 # code...
                 return view(
@@ -239,8 +379,8 @@ class StaterkitController extends Controller
         $categories = Categorie::all();
         $brand = Brand::all();
         $p = Produit::all();
-        $length = count($p);
-        session()->put('length', $length);
+        $pr=Produit::where('brand_id',$request->brand)->get();
+        session()->put('length', count($pr));
         $categorie=$request->categorie;
         $brand_id="all";
         }elseif ($request->brand) {
@@ -248,8 +388,9 @@ class StaterkitController extends Controller
             $categories = Categorie::all();
             $brand = Brand::all();
             $p = Produit::all();
-            $length = count($p);
-            session()->put('length', $length);
+   
+            $pr=Produit::where('brand_id',$request->brand)->get();
+            session()->put('length', count($pr));
             $categorie="all";
             $brand_id=$request->brand;
         }
@@ -264,7 +405,7 @@ class StaterkitController extends Controller
                 'brand' => $brand,
                 'produits' => $produits,
                 'categories' => $categories,
-                'length' => $length,
+               
                 'categorie_id' => $categorie,
                 'brand_id' => $brand_id,
             ]);
@@ -275,7 +416,7 @@ class StaterkitController extends Controller
                 'brand' => $brand,
                 'produits' => $produits,
                 'categories' => $categories,
-                'length' => $length,
+               
                 'categorie_id' => $categorie,
                 'brand_id' => $brand_id,
             ]);
@@ -295,7 +436,7 @@ class StaterkitController extends Controller
         //     ['link' => 'javascript:void(0)', 'name' => 'eCommerce'],
         //     ['name' => 'Shop'],
         // ];
-        $produits = Produit::paginate(9);
+        $produits = Produit::orderBy('price','asc')->paginate(9);
         $categories = Categorie::all();
         $brand = Brand::all();
         $p = Produit::all();
@@ -538,6 +679,7 @@ class StaterkitController extends Controller
                 'produit.photo',
                 'produit.description',
                 
+                'produit.promo',
                 'produit.stock',
                 'produit.rating',
                 'produit.price'
@@ -648,7 +790,11 @@ class StaterkitController extends Controller
         }
  
         $cart = session()->get('cart', []);
-
+        if ($product->promo) {
+            $price=$product->price-$product->price*($product->promo/100);
+        }else{
+            $price=$product->price;
+        }
         
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
@@ -660,7 +806,7 @@ class StaterkitController extends Controller
                 "photo" => $product->photo,
                 "rating" => $product->rating,
                 "brand" => $brand->name,
-                "price" => $product->price,
+                "price" => $price,
                 "quantity" => 1
             ];
         }
@@ -745,4 +891,13 @@ class StaterkitController extends Controller
         ];
         return view('/content/about-us',['pageConfigs'=>$pageConfigs]);
     }
+    public function swap($locale){
+        // available language in template array
+       $availLocale=['en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
+       // check for existing language
+       if(array_key_exists($locale,$availLocale)){
+           session()->put('locale',$locale);
+       }
+        return redirect()->back();
+   }
 }

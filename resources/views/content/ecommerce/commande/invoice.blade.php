@@ -114,7 +114,8 @@
                     </div>
                   </td>
                   <td class="py-1">
-                    <span class="fw-bold">${{$item->price}}</span>
+                    <span class="fw-bold">@if ($item->promo)<strike class="text-danger">${{$item->price}}</strike><span class="">${{$item->price-$item->price*($item->promo/100)}}</span></h6>@else
+                    ${{$item->price}}@endif</span>
                   </td>
                   <td class="py-1">
                     <span class="fw-bold">{{$item->quantite}}</span>

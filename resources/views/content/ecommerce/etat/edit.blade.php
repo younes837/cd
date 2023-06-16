@@ -33,7 +33,7 @@
     <div class="card">
 
             <div class="card-titlle text-center mt-2">
-                <h1>modifier {{$etat->libelle}}</h1>
+                <h1>{{ __('locale.Edit') }} {{$etat->libelle}}</h1>
             </div>
             <div class="card-body">
 
@@ -44,7 +44,7 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">libelle</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -57,7 +57,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="city-column">descreption</label>
+                            <label for="city-column">Descreption</label>
                             <input type="text" id="descreption-column" class="form-control" placeholder="descreption" name="description" value="{{$etat->description}}" />
                           </div>
                         </div>

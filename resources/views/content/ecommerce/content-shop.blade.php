@@ -1,6 +1,7 @@
 {{-- <div class="search-results">{{$produits->total()}} results found</div> --}}
 
 @if(isset($produits))
+<input type="hidden" id="count-product" value="{{session('length')}}">
     @foreach($produits as $produit)
   <div class="card ecommerce-card">
      <div class="item-img text-center">
@@ -26,7 +27,13 @@
            </ul>
          </div>
          <div>
-           <h6 class="item-price">${{$produit->price}}</h6>
+           <h6 class="item-price">
+            @if ($produit->promo)
+              <strike class="text-danger">${{$produit->price}}</strike>
+              <span class="">${{$produit->price-$produit->price*($produit->promo/100)}}</span></h6>
+            @else
+            ${{$produit->price}}
+            @endif
          </div>
        </div>
        <h6 class="item-name">
@@ -40,7 +47,12 @@
      <div class="item-options text-center">
        <div class="item-wrapper">
          <div class="item-cost">
-           <h4 class="item-price">${{$produit->price}}</h4>
+           <h4 class="item-price">@if ($produit->promo)
+            <strike class="text-danger">${{$produit->price}}</strike>
+            <span class="">${{$produit->price-$produit->price*($produit->promo/100)}}</span></h6>
+          @else
+          ${{$produit->price}}
+          @endif</h4>
          </div>
        </div>
 
@@ -61,13 +73,13 @@
         @else
             <i data-feather="heart"></i>
         @endif
-        <span>Wishlist</span>
+        <span>{{ __('locale.Wishlist') }}</span>
     </a>
       @endif
        <a href="{{ route('add_to_cart', $produit->id) }}"  class="btn btn-primary btn-cart">
          <i data-feather="shopping-cart"></i>
         
-         <span class="add-to-cart">Add to cart</span>
+         <span class="add-to-cart">{{ __('locale.Add to cart') }}</span>
        </a>
      </div>
    </div> 

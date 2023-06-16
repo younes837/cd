@@ -62,7 +62,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">brand list</h4>
+          <h4 class="card-title">{{ __('locale.Brand') }}</h4>
         </div>
 
 
@@ -70,7 +70,7 @@
         <div class="modal-size-lg text-end mb-2">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary mb-2 mx-2" data-bs-toggle="modal" data-bs-target="#large">
-             Add Brand
+             {{ __('locale.Add Brand') }}
             </button>
             <!-- Modal -->
             <div
@@ -84,7 +84,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
 
-                    <h4 class="modal-title" id="myModalLabel17">ajout d'une brand</h4>
+                    <h4 class="modal-title" id="myModalLabel17">{{ __('locale.Add Brand') }}</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -93,7 +93,7 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">nom</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="last-name-column">photo</label>
+                            <label for="last-name-column">{{ __('locale.Picture') }}</label>
                             <input
                               type="file"
                               id="last-name-column"
@@ -117,7 +117,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="city-column">descreption</label>
+                            <label for="city-column">Descreption</label>
                             <input type="text" id="descreption-column" class="form-control" placeholder="descreption" name="description" />
                           </div>
                         </div>
@@ -138,9 +138,9 @@
           <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">photo</th>
-            <th scope="col">nom</th>
-            <th scope="col">descreption</th>
+              <th scope="col">{{ __('locale.Picture') }}</th>
+            <th scope="col">{{ __('locale.Name') }}</th>
+            <th scope="col">Descreption</th>
             <th></th>
             </tr>
         </thead>
@@ -158,12 +158,12 @@
                   <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="{{ route('brand.edit', $brand->id) }}">
                       <i data-feather="edit-2" class="me-50"></i>
-                      <span>Edit</span>
+                      <span>{{ __('locale.Edit') }}</span>
                     </a>
 
                     <a href="{{ route('brand.destroy', $brand->id) }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $brand->id }}').submit();">
                                   <i data-feather="trash" class="me-50"></i>
-                                  <span>Delete</span>
+                                  <span>{{ __('locale.Delete') }}</span>
                                 </a>
                               <form id="delete-form-{{ $brand->id }}" action="{{ route('brand.destroy', $brand->id) }}" method="POST" style="display: none;">
                                   @csrf

@@ -268,7 +268,7 @@
                                 <img src="{{asset('images/logo/swift-shop.png')}}" class="img p-1" >
                             </div>
                             <span class="pt-2 text-dark">About Us</span>
-                            <p class="text-justify">SwiftShop is an online store specialized in the sale of electronics that offers an excellent service and places the customer at the center of its concerns. Your commitment to customer satisfaction, your wide selection of quality products and your reliable after-sales service make SwiftShop an ideal choice for technology lovers looking for an exceptional shopping experience.</p>
+                            <p class="text-justify">{{ __('locale.SwiftShop is an online store specialized in the sale of electronics that offers an excellent service and places the customer at the center of its concerns. Your commitment to customer satisfaction, your wide selection of quality products and your reliable after-sales service make SwiftShop an ideal choice for technology lovers looking for an exceptional shopping experience.') }}</p>
                             <div class="d-flex justify-content-center">
                                 <div class="carta">
                                     <a class="social-link1">

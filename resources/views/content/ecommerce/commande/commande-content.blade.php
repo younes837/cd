@@ -8,10 +8,10 @@
             <thead class="">
               <tr>
                 <th></th>
-                <th>Customer</th>
-                <th> Shipping Address</th>
+                <th>{{ __('locale.Customer') }}</th>
+                <th> {{ __('locale.Shipping Address') }}</th>
                 <th>Date</th>
-                <th>Status</th>
+                <th>{{ __('locale.Status') }}</th>
                 <th>Total</th>
                 <th></th>
               </tr>

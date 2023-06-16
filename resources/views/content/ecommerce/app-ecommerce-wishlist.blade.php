@@ -165,6 +165,23 @@
 @section('content')
 <!-- Wishlist Starts -->
 @if (Auth::check())
+
+@if (count($produits)==0)
+<div>
+
+              <div class="alert alert-secondary" role="alert">
+          
+                <div class="alert-body text center"><i style="margin-bottom: 3px" data-feather="info"></i>
+                  No <a href="#" class="alert-link">Product</a> Added To The <a href="#" class="alert-link">Wishlist</a>
+                  laborum!
+                </div>
+              </div>
+            
+    </div>
+  </section>
+    
+</div>
+@endif
 <section id="wishlist" class="grid-view wishlist-items">
   @include('content/ecommerce/wishlist-content')
   

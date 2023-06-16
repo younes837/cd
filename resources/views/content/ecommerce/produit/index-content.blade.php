@@ -32,12 +32,12 @@
       <td>
         <div class="product-item d-flex align-items-center gap-2">
           <div class="avatar-sm flex-shrink-0" >
-              <a class="avatar-title bg-light rounded" href="{{url('app/ecommerce/details/'.$product->id)}}">
+              <a class="avatar-title bg-light rounded" href="{{route('product.show', $product->id)}}">
                   <img src="{{asset($product->photo)}}" alt="" class="avatar-sm">
               </a>
           </div>
           <div class="flex-grow-1">
-              <h6 class="fs-md"><a href="{{url('app/ecommerce/details/'.$product->id)}}" class="text-reset">{{$product->libelle}}</a></h6>
+              <h6 class="fs-md"><a href="{{route('product.show', $product->id)}}" class="text-reset">{{$product->libelle}}</a></h6>
               <p class="text-muted mb-0"><a href="#!" class="text-reset">{{App\Models\Brand::where('id',$product->brand_id)->first()->name}}</a></p>
           </div>
       </div>
@@ -53,7 +53,12 @@
       @endif
     </td>
     <td scope="row">{{$product->rating}}<i data-feather="star" class="filled-star " style="margin-bottom: 4px"></i></td>
-    <td scope="row">${{$product->price}}</td>
+    <td scope="row text-center">@if ($product->promo)
+      <strike class="text-danger">${{$product->price}}</strike>
+      <span class="">${{$product->price-$product->price*($product->promo/100)}}</span></h6>
+    @else
+    ${{$product->price}}
+    @endif</td>
     <td scope="row">{{App\Models\Categorie::where('id',$product->categorie_id)->select('name')->first()->name}}</td>
     {{-- <td scope="row">{{App\Models\propriete::where('id',$product->propriete_id)->select('libelle')->first()->libelle}}</td> --}}
     {{-- <td scope="row">{{App\Models\Brand::where('id',$product->brand_id)->select('name')->first()->name}}</td> --}}

@@ -33,7 +33,7 @@
     <div class="card">
 
             <div class="card-titlle text-center mt-2">
-                <h1>modifier {{$brand->name}}</h1>
+                <h1>{{ __('locale.Edit') }} {{$brand->name}}</h1>
             </div>
             <div class="card-body">
                 <div class="row my-2">
@@ -53,7 +53,7 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">name</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="last-name-column">image</label>
+                            <label for="last-name-column">{{ __('locale.Picture') }}</label>
                             <input
                               type="file"
                               id="last-name-column"
@@ -77,9 +77,9 @@
                             />
                           </div>
                         </div>
-                        <div class="col-md-6 col-12">
+                        <div class="col-md-12 col-12">
                           <div class="form-group">
-                            <label for="city-column">descreption</label>
+                            <label for="city-column">Descreption</label>
                             <input type="text" id="descreption-column" class="form-control" placeholder="descreption" name="description" value="{{$brand->description}}" />
                           </div>
                         </div>

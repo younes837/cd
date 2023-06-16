@@ -627,30 +627,52 @@ if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal
 <rs-module-wrap id="rev_slider_17_1_wrapper" data-source="gallery" style="visibility:hidden;background:#ffffff;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
 <rs-module id="rev_slider_17_1" style="" data-version="6.6.5">
 <rs-slides style="overflow: hidden; position: absolute;">
-<rs-slide style="position: absolute;" data-key="rs-37" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-2-rev-img-1.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
-<img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
-<rs-group id="slider-17-slide-37-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,60px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;"><rs-layer id="slider-17-slide-37-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Which Smartphone is Right For You?
-</rs-layer><rs-layer id="slider-17-slide-37-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">Mei doctus principes interes
-</rs-layer><rs-layer id="slider-17-slide-37-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
-</rs-layer><rs-layer id="slider-17-slide-37-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$1.000
-</rs-layer></rs-group><rs-layer id="slider-17-slide-37-layer-6" data-type="image" data-xy="x:c;xo:0,0,-20px,-87px;y:b;yo:-1px,-1px,-5px,-5px;" data-text="w:normal;" data-dim="w:1400px,1100px,900px,520px;h:550px,432px,354px,204px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-img-1.jpg" data-no-retina>
-</rs-layer> </rs-slide>
+  <rs-slide style="position: absolute;" data-key="rs-37" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-2-rev-img-1.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
+    <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
+    <rs-group id="slider-17-slide-37-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,60px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;">
+      <rs-layer id="slider-17-slide-37-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Which Smartphone is Right For You?
+      </rs-layer>
+      <rs-layer id="slider-17-slide-37-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">Samsung Galaxy S22
+      </rs-layer>
+      <rs-layer id="slider-17-slide-37-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
+      </rs-layer>
+      <rs-layer id="slider-17-slide-37-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$899
+      </rs-layer>
+  </rs-group>
+  <rs-layer id="slider-17-slide-37-layer-6" data-type="image" data-xy="x:c;xo:0,0,-20px,-87px;y:b;yo:-1px,-1px,-5px,-5px;" data-text="w:normal;" data-dim="w:1400px,1100px,900px,520px;h:550px,432px,354px,204px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-img-1.jpg" data-no-retina>
+  </rs-layer>
+</rs-slide>
 <rs-slide style="position: absolute;" data-key="rs-38" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-2-rev-img-1.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
-<img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
-<rs-group id="slider-17-slide-38-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,60px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;"><rs-layer id="slider-17-slide-38-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Find The Perfect Pair of Headphones
-</rs-layer><rs-layer id="slider-17-slide-38-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">Mei doctus principes interes
-</rs-layer><rs-layer id="slider-17-slide-38-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
-</rs-layer><rs-layer id="slider-17-slide-38-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$890
-</rs-layer></rs-group><rs-layer id="slider-17-slide-38-layer-6" data-type="image" data-xy="x:c;xo:0,50px,50px,110px;y:b;yo:0,0,0,-50px;" data-text="w:normal;" data-dim="w:1400px,1145px,1400px,1400px;h:550px,450px,550px,550px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:-50;" data-frame_1="st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-slider-photo-2.jpg" data-no-retina>
-</rs-layer> </rs-slide>
+  <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
+  <rs-group id="slider-17-slide-38-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,60px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;">
+    <rs-layer id="slider-17-slide-38-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Find The Perfect Pair of Headphones
+    </rs-layer>
+    <rs-layer id="slider-17-slide-38-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">AirPods
+    </rs-layer>
+    <rs-layer id="slider-17-slide-38-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
+    </rs-layer>
+    <rs-layer id="slider-17-slide-38-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$320
+    </rs-layer>
+  </rs-group>
+  <rs-layer id="slider-17-slide-38-layer-6" data-type="image" data-xy="x:c;xo:0,50px,50px,110px;y:b;yo:0,0,0,-50px;" data-text="w:normal;" data-dim="w:1400px,1145px,1400px,1400px;h:550px,450px,550px,550px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:-50;" data-frame_1="st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-slider-photo-2.jpg" data-no-retina>
+  </rs-layer>
+</rs-slide>
 <rs-slide style="position: absolute;" data-key="rs-69" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-2-rev-img-1.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
-<img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
-<rs-group id="slider-17-slide-69-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,70px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;"><rs-layer id="slider-17-slide-69-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Next Generation of Tablets is Here
-</rs-layer><rs-layer id="slider-17-slide-69-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">Mei doctus principes interes
-</rs-layer><rs-layer id="slider-17-slide-69-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
-</rs-layer><rs-layer id="slider-17-slide-69-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$1.950
-</rs-layer></rs-group><rs-layer id="slider-17-slide-69-layer-6" data-type="image" data-xy="x:c;xo:0,50px,140px,200px;y:b;" data-text="w:normal;" data-dim="w:1400px,1145px,1400px,1400px;h:550px,450px,550px,550px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="x:0px,0,0,0;y:-1px,0,0,0;st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-slider-photo-3.jpg" data-no-retina>
-</rs-layer> </rs-slide>
+  <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-2-rev-img-1" width="1920" height="600" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:left center;" data-no-retina>
+  <rs-group id="slider-17-slide-69-layer-3" data-type="group" data-xy="x:c;xo:-489px,-339px,0,0;y:m,m,m,t;yo:10px,11px,-95px,70px;" data-text="w:normal;" data-dim="w:420px,420px,86%,86%;h:250px,250px,230px,350px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;">
+    <rs-layer id="slider-17-slide-69-layer-1" data-type="text" data-color="#000000" data-xy="" data-pos="a" data-text="w:normal;s:46,46,42,42;l:52,52,48,48;fw:500;" data-dim="w:420px,420px,400px,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Next Generation of Tablets is Here
+    </rs-layer>
+    <rs-layer id="slider-17-slide-69-layer-2" data-type="text" data-color="#676770" data-xy="yo:118px,118px,106px,158px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';">Huawei MatePad Pro
+    </rs-layer>
+    <rs-layer id="slider-17-slide-69-layer-4" data-type="text" data-color="#676770" data-xy="yo:165px,165px,153px,205px;" data-pos="a" data-text="w:normal;s:11;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
+    </rs-layer>
+    <rs-layer id="slider-17-slide-69-layer-5" data-type="text" data-color="#000000" data-xy="yo:186px,186px,174px,226px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$320
+    </rs-layer>
+  </rs-group>
+  <rs-layer id="slider-17-slide-69-layer-6" data-type="image" data-xy="x:c;xo:0,50px,140px,200px;y:b;" data-text="w:normal;" data-dim="w:1400px,1145px,1400px,1400px;h:550px,450px,550px,550px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="x:0px,0,0,0;y:-1px,0,0,0;st:50;sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;">
+    <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="550" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-slider-photo-3.jpg" data-no-retina>
+  </rs-layer> 
+</rs-slide>
 </rs-slides>
 </rs-module>
 
@@ -680,7 +702,7 @@ Sports Watches	</h4>
 </div>
 <div>
 <div class="qodef-m-button">
-<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=1')}}" target="_self"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=1')}}" target="_self"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
 </div>
 </div>
 </div>
@@ -695,7 +717,7 @@ Sports Watches	</h4>
 <div class="elementor-widget-container">
 <div class="qodef-shortcode qodef-m  qodef-banner qodef-layout--link-button ">
 <div class="qodef-m-image" style="--qodef-image-height--768: 230px">
-<img width="904" height="360" src="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2.jpg" class="attachment-full size-full" alt="w" decoding="async" loading="lazy" srcset="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2.jpg 904w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-300x119.jpg 300w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-768x306.jpg 768w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-600x239.jpg 600w" sizes="(max-width: 904px) 100vw, 904px" /></div>
+<img width="904" height="360" src="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-4-banner-3-horizontal.jpg" class="attachment-full size-full" alt="w" decoding="async" loading="lazy" srcset="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2.jpg 904w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-300x119.jpg 300w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-768x306.jpg 768w, https://gizmos.qodeinteractive.com/wp-content/uploads/2022/09/home-8-banner-2-600x239.jpg 600w" sizes="(max-width: 904px) 100vw, 904px" /></div>
 <div class="qodef-m-content">
 <div class="qodef-m-content-inner" style="--qodef-content-padding--1440: 28px 28px 25px 28px;--qodef-content-padding--1024: 35px 35px 32px 35px;--qodef-content-padding--768: 35px 30px 32px 30px;--qodef-content-padding--680: 25px 20px 22px 20px">
 <div>
@@ -704,7 +726,7 @@ Gadgets &amp;<br /> Accessories	</h4>
 </div>
 <div>
 <div class="qodef-m-button">
-<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=5')}}"  target="_self" style="color: #FFFFFF"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=5')}}"  target="_self" style="color: #FFFFFF"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
 </div>
 </div>
 </div>
@@ -728,7 +750,7 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
 </div>
 <div>
 <div class="qodef-m-button">
-<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=7')}}"  target="_self"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+<a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop/home?categorie=7')}}"  target="_self"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
 </div>
 </div>
 </div>
@@ -747,9 +769,9 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
 <div class="elementor-widget-container">
 <div class="qodef-shortcode qodef-m  qodef-woo-shortcode qodef-woo-product-list qodef-item-layout--info-below   qodef-category-filter-type--simple    qodef-grid qodef-layout--columns  qodef-gutter--small qodef-col-num--5 qodef-item-layout--info-below qodef--no-bottom-space qodef-pagination--off qodef-responsive--custom qodef-col-num--1440--5 qodef-col-num--1366--5 qodef-col-num--1024--3 qodef-col-num--768--3 qodef-col-num--680--1 qodef-col-num--480--1" data-options="{&quot;plugin&quot;:&quot;gizmos_core&quot;,&quot;module&quot;:&quot;plugins\/woocommerce\/shortcodes&quot;,&quot;shortcode&quot;:&quot;product-list&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;next_page&quot;:&quot;2&quot;,&quot;max_pages_num&quot;:1,&quot;product_list_title&quot;:&quot;Featured Products&quot;,&quot;behavior&quot;:&quot;columns&quot;,&quot;images_proportion&quot;:&quot;full&quot;,&quot;columns&quot;:&quot;5&quot;,&quot;columns_responsive&quot;:&quot;custom&quot;,&quot;columns_1440&quot;:&quot;5&quot;,&quot;columns_1366&quot;:&quot;5&quot;,&quot;columns_1024&quot;:&quot;3&quot;,&quot;columns_768&quot;:&quot;3&quot;,&quot;columns_680&quot;:&quot;1&quot;,&quot;columns_480&quot;:&quot;1&quot;,&quot;space&quot;:&quot;small&quot;,&quot;posts_per_page&quot;:&quot;5&quot;,&quot;orderby&quot;:&quot;date&quot;,&quot;order&quot;:&quot;ASC&quot;,&quot;additional_params&quot;:&quot;tax&quot;,&quot;tax&quot;:&quot;product_cat&quot;,&quot;tax_slug&quot;:&quot;3d-printers&quot;,&quot;layout&quot;:&quot;info-below&quot;,&quot;title_tag&quot;:&quot;h5&quot;,&quot;enable_category&quot;:&quot;yes&quot;,&quot;enable_banner&quot;:&quot;no&quot;,&quot;enable_compare_product&quot;:&quot;yes&quot;,&quot;enable_wishlist&quot;:&quot;yes&quot;,&quot;enable_filter&quot;:&quot;no&quot;,&quot;pagination_type&quot;:&quot;no-pagination&quot;,&quot;category_filter_type&quot;:&quot;simple&quot;,&quot;enable_ordering_filter&quot;:&quot;no&quot;,&quot;enable_results_count&quot;:&quot;no&quot;,&quot;object_class_name&quot;:&quot;GizmosCore_Product_List_Shortcode&quot;,&quot;additional_query_args&quot;:{&quot;tax_query&quot;:[{&quot;taxonomy&quot;:&quot;product_cat&quot;,&quot;field&quot;:&quot;slug&quot;,&quot;terms&quot;:&quot;3d-printers&quot;}]},&quot;taxonomy_filter&quot;:&quot;product_cat&quot;,&quot;unique&quot;:&quot;1&quot;,&quot;space_value&quot;:10}">
 <div class="qodef-m-top">
-<h3 class="qodef-m-product-list-title">New Products</h3>
+<h3 class="qodef-m-product-list-title">{{ __('locale.New Products') }}</h3>
 <div class="qodef-m-button">
-  <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+  <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
 
 </div>
 
@@ -784,19 +806,20 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     <div class="qodef-m-content-inner" style="--qodef-content-padding: 50px 40px 38px 40px;--qodef-content-padding--1440: 30px 30px 18px 30px;--qodef-content-padding--768: 35px 35px 25px 35px ;--qodef-content-padding--680: 25px 25px 15px 25px">
     <div>
     <h2 class="qodef-m-title" style="--qodef-title-font-size--680: 28px;color: #FFFFFF">
-    E-77 Camera	</h2>
+      Keys inphic PM6 6	</h2>
     <h5 class="qodef-m-subtitle" style="color: #ACACAC;font-weight: 400">
-    MF841HN/A 13&quot;	</h5>
+      Wireless PC Mouse&quot;	</h5>
     </div>
     <div>
     <h6 class="qodef-m-text" style="color: #ACACAC">
-    weekend sale	</h6>
+    STARTINT AT	</h6>
     <span class="qodef-m-bottom-text" style="color: #FFFFFF;--qodef-bottom-text-font-size--680: 37px">
-    20%	</span>
+      $19
+    </span>
     </div>
     </div>
     </div>
-    <a itemprop="url" href="https://gizmos.qodeinteractive.com/product-category/computers-tablets/3d-printers/" class="qodef-m-banner-link" target="_self"></a>
+    <a itemprop="url" href="{{asset('/app/ecommerce/details/27')}}" class="qodef-m-banner-link" target="_self"></a>
     </div>
     </div>
     </div>
@@ -813,19 +836,19 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     <div class="qodef-m-content-inner" style="--qodef-content-padding: 50px 40px 38px 40px;--qodef-content-padding--1440: 30px 30px 18px 30px;--qodef-content-padding--768: 35px 35px 25px 35px ;--qodef-content-padding--680: 25px 25px 15px 25px">
     <div>
     <h2 class="qodef-m-title" style="--qodef-title-font-size--680: 28px;color: #FFFFFF">
-    HP Ultimate	</h2>
+      Camera CCW5 </h2>
     <h5 class="qodef-m-subtitle" style="color: #ACACAC;font-weight: 400">
-    with Bluetooth 5.1	</h5>
+    w4k Waterproof	</h5>
     </div>
     <div>
     <h6 class="qodef-m-text" style="color: #ACACAC">
-    discount -30%	</h6>
+    STARTING AT</h6>
     <span class="qodef-m-bottom-text" style="color: #FFFFFF;--qodef-bottom-text-font-size--680: 37px">
-    $349	</span>
+      $1399	</span>
     </div>
     </div>
     </div>
-    <a itemprop="url" href="https://gizmos.qodeinteractive.com/product-category/webcams-equipment/gopro/" class="qodef-m-banner-link" target="_self"></a>
+    <a itemprop="url" href="{{asset('/app/ecommerce/details/11')}}"class="qodef-m-banner-link" target="_self"></a>
     </div>
     </div>
     </div>
@@ -842,14 +865,14 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     <div class="qodef-e-product-list-slider-holder">
     <div class="qodef-shortcode qodef-m  qodef-woo-shortcode qodef-woo-product-list qodef-item-layout--info-below   qodef-category-filter-type--simple    qodef-grid qodef-swiper-container  qodef-gutter--small qodef-col-num--4 qodef-item-layout--info-below qodef-filter--on qodef--no-bottom-space qodef-pagination--off qodef-responsive--predefined" data-options="{&quot;slidesPerView&quot;:&quot;4&quot;,&quot;spaceBetween&quot;:20,&quot;loop&quot;:false,&quot;autoplay&quot;:false,&quot;speed&quot;:&quot;&quot;,&quot;speedAnimation&quot;:&quot;&quot;,&quot;slideAnimation&quot;:&quot;&quot;,&quot;outsideNavigation&quot;:&quot;yes&quot;,&quot;unique&quot;:&quot;2&quot;,&quot;plugin&quot;:&quot;gizmos_core&quot;,&quot;module&quot;:&quot;plugins\/woocommerce\/shortcodes&quot;,&quot;shortcode&quot;:&quot;product-list&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;next_page&quot;:&quot;2&quot;,&quot;max_pages_num&quot;:1,&quot;product_list_title&quot;:&quot;Featured Products&quot;,&quot;behavior&quot;:&quot;slider&quot;,&quot;images_proportion&quot;:&quot;full&quot;,&quot;columns&quot;:&quot;4&quot;,&quot;columns_responsive&quot;:&quot;predefined&quot;,&quot;space&quot;:&quot;small&quot;,&quot;slider_loop&quot;:&quot;no&quot;,&quot;slider_autoplay&quot;:&quot;no&quot;,&quot;slider_pagination&quot;:&quot;no&quot;,&quot;posts_per_page&quot;:&quot;5&quot;,&quot;orderby&quot;:&quot;date&quot;,&quot;order&quot;:&quot;ASC&quot;,&quot;additional_params&quot;:&quot;tax&quot;,&quot;tax&quot;:&quot;product_cat&quot;,&quot;tax_slug&quot;:&quot;computer-systems&quot;,&quot;layout&quot;:&quot;info-below&quot;,&quot;title_tag&quot;:&quot;h5&quot;,&quot;enable_category&quot;:&quot;yes&quot;,&quot;enable_banner&quot;:&quot;no&quot;,&quot;enable_compare_product&quot;:&quot;yes&quot;,&quot;enable_wishlist&quot;:&quot;yes&quot;,&quot;enable_filter&quot;:&quot;yes&quot;,&quot;pagination_type&quot;:&quot;no-pagination&quot;,&quot;filter_type&quot;:&quot;simple&quot;,&quot;category_filter_type&quot;:&quot;simple&quot;,&quot;enable_ordering_filter&quot;:&quot;no&quot;,&quot;enable_results_count&quot;:&quot;no&quot;,&quot;custom_grid&quot;:&quot;no&quot;,&quot;object_class_name&quot;:&quot;GizmosCore_Product_List_Shortcode&quot;,&quot;additional_query_args&quot;:{&quot;tax_query&quot;:[{&quot;taxonomy&quot;:&quot;product_cat&quot;,&quot;field&quot;:&quot;slug&quot;,&quot;terms&quot;:&quot;computer-systems&quot;}]},&quot;taxonomy_filter&quot;:&quot;product_cat&quot;,&quot;space_value&quot;:10}">
     <div class="qodef-m-top">
-    <h3 class="qodef-m-product-list-title">Top Products</h3>
+    <h3 class="qodef-m-product-list-title">{{ __('locale.Top Products') }}</h3>
     
     <div class="qodef-m-filter">
     
     </div>
      <div class="qodef-swipper-nav-wrapper">
       <div class="qodef-m-button">
-        <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+        <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
       
     </div>
     </div>
@@ -877,19 +900,27 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     <rs-slides style="overflow: hidden; position: absolute;">
     <rs-slide style="position: absolute;" data-key="rs-41" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1-50x100.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
     <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-8-rev-bg-img-1" width="1920" height="500" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1.jpg" data-no-retina>
-    <rs-group id="slider-19-slide-41-layer-1" data-type="group" data-xy="x:c;xo:-470px,-320px,0,0;y:m,m,t,t;yo:12px,12px,65px,60px;" data-text="w:normal;" data-dim="w:460px,460px,86%,86%;h:200px,200px,200px,245px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;"><rs-layer id="slider-19-slide-41-layer-0" data-type="text" data-xy="" data-pos="a" data-text="w:normal;s:46,46,46,42;l:52,52,52,48;fw:500;" data-dim="w:460px,460px,100%,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Gaming Consoles
-    </rs-layer><rs-layer id="slider-19-slide-41-layer-2" data-type="text" data-color="#acacac" data-xy="yo:62px,62px,62px,106px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';text-transform:uppercase;">asus CX70 2QF-621XPL 13"
+    <rs-group id="slider-19-slide-41-layer-1" data-type="group" data-xy="x:c;xo:-470px,-320px,0,0;y:m,m,t,t;yo:12px,12px,65px,60px;" data-text="w:normal;" data-dim="w:460px,460px,86%,86%;h:200px,200px,200px,245px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:13;"><rs-layer id="slider-19-slide-41-layer-0" data-type="text" data-xy="" data-pos="a" data-text="w:normal;s:46,46,46,42;l:52,52,52,48;fw:500;" data-dim="w:460px,460px,100%,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:12;font-family:'Roboto';">Gaming Controller
+    </rs-layer><rs-layer id="slider-19-slide-41-layer-2" data-type="text" data-color="#acacac" data-xy="yo:62px,62px,62px,106px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:11;font-family:'Roboto';text-transform:uppercase;">Sony CX70 2QF-621XPL 13"
     </rs-layer><rs-layer id="slider-19-slide-41-layer-3" data-type="text" data-color="#acacac" data-xy="yo:114px,114px,114px,158px;" data-pos="a" data-text="w:normal;s:11;l:15;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:10;font-family:'Roboto';text-transform:uppercase;">starting at
-    </rs-layer><rs-layer id="slider-19-slide-41-layer-4" data-type="text" data-xy="yo:130px,130px,130px,174px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$1.250
+    </rs-layer><rs-layer id="slider-19-slide-41-layer-4" data-type="text" data-xy="yo:130px,130px,130px,174px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">$250
     </rs-layer></rs-group><rs-layer id="slider-19-slide-41-layer-5" data-type="image" data-xy="x:c;xo:215px,193px,125px,0;y:m,m,m,b;yo:24px,41px,77px,0;" data-text="w:normal;" data-dim="w:969px,750px,600px,350px;h:452px,350px,280px,163px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:30px;" data-frame_1="sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:8;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="969" height="452" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-img-2.png" data-no-retina>
-    </rs-layer> </rs-slide>
+    </rs-layer>
+   </rs-slide>
     <rs-slide style="position: absolute;" data-key="rs-70" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1-50x100.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
     <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-8-rev-bg-img-1" width="1920" height="500" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1.jpg" data-no-retina>
-    <rs-group id="slider-19-slide-70-layer-1" data-type="group" data-xy="x:c;xo:-470px,-320px,0,0;y:m,m,t,t;yo:12px,12px,65px,60px;" data-text="w:normal;" data-dim="w:460px,460px,86%,86%;h:200px,200px,200px,245px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:7;"><rs-layer id="slider-19-slide-70-layer-0" data-type="text" data-xy="" data-pos="a" data-text="w:normal;s:46,46,46,42;l:52,52,52,48;fw:500;" data-dim="w:460px,460px,100%,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">Vacuum Cleaners
-    </rs-layer><rs-layer id="slider-19-slide-70-layer-2" data-type="text" data-color="#acacac" data-xy="yo:62px,62px,62px,106px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:8;font-family:'Roboto';text-transform:uppercase;">Clenso 2QF-621XPL 13
-    </rs-layer><rs-layer id="slider-19-slide-70-layer-3" data-type="text" data-color="#acacac" data-xy="yo:114px,114px,114px,158px;" data-pos="a" data-text="w:normal;s:11;l:15;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:7;font-family:'Roboto';text-transform:uppercase;">starting at
-    </rs-layer><rs-layer id="slider-19-slide-70-layer-4" data-type="text" data-xy="yo:130px,130px,130px,174px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:6;font-family:'Roboto';">$1.650
-    </rs-layer></rs-group><rs-layer id="slider-19-slide-70-layer-6" data-type="image" data-xy="x:c;xo:0,0,20px,-66px;y:m,m,b,b;yo:0,0,0,-6px;" data-text="w:normal;" data-dim="w:1400px,1100px,900px,650px;h:500px,393px,321px,232px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:30px;" data-frame_1="sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:3;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="500" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-banner-slider-photo-2.png" data-no-retina>
+    <rs-group id="slider-19-slide-70-layer-1" data-type="group" data-xy="x:c;xo:-470px,-320px,0,0;y:m,m,t,t;yo:12px,12px,65px,60px;" data-text="w:normal;" data-dim="w:460px,460px,86%,86%;h:200px,200px,200px,245px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:2500;" style="z-index:7;">
+      <rs-layer id="slider-19-slide-70-layer-0" data-type="text" data-xy="" data-pos="a" data-text="w:normal;s:46,46,46,42;l:52,52,52,48;fw:500;" data-dim="w:460px,460px,100%,100%;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:100;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:9;font-family:'Roboto';">Vacuum Cleaners
+      </rs-layer>
+      <rs-layer id="slider-19-slide-70-layer-2" data-type="text" data-color="#acacac" data-xy="yo:62px,62px,62px,106px;" data-pos="a" data-text="w:normal;s:16;l:19;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:150;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:8;font-family:'Roboto';text-transform:uppercase;">Clenso 2QF-621XPL 13
+      </rs-layer>
+      <rs-layer id="slider-19-slide-70-layer-3" data-type="text" data-color="#acacac" data-xy="yo:114px,114px,114px,158px;" data-pos="a" data-text="w:normal;s:11;l:15;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:7;font-family:'Roboto';text-transform:uppercase;">starting at
+      </rs-layer>
+      <rs-layer id="slider-19-slide-70-layer-4" data-type="text" data-xy="yo:130px,130px,130px,174px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:6;font-family:'Roboto';">$1.650
+      </rs-layer>
+    </rs-group
+    ><rs-layer id="slider-19-slide-70-layer-6" data-type="image" data-xy="x:c;xo:0,0,20px,-66px;y:m,m,b,b;yo:0,0,0,-6px;" data-text="w:normal;" data-dim="w:1400px,1100px,900px,650px;h:500px,393px,321px,232px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:30px;" data-frame_1="sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:3;">
+      <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="500" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-banner-slider-photo-2.png" data-no-retina>
     </rs-layer> </rs-slide>
     <rs-slide style="position: absolute;" data-key="rs-71" data-title="Slide" data-thumb="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1-50x100.jpg" data-anim="adpr:false;" data-in="o:0;" data-out="a:false;">
     <img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" title="home-8-rev-bg-img-1" width="1920" height="500" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-rev-bg-img-1.jpg" data-no-retina>
@@ -898,7 +929,8 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     </rs-layer><rs-layer id="slider-19-slide-71-layer-3" data-type="text" data-color="#acacac" data-xy="yo:114px,114px,114px,158px;" data-pos="a" data-text="w:normal;s:11;l:15;ls:1px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:7;font-family:'Roboto';text-transform:uppercase;">starting at
     </rs-layer><rs-layer id="slider-19-slide-71-layer-4" data-type="text" data-xy="yo:130px,130px,130px,174px;" data-pos="a" data-text="w:normal;s:41;l:49;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="x:50;" data-frame_1="st:250;sp:1000;" data-frame_999="o:0;st:w;" style="z-index:6;font-family:'Roboto';">$1.950
     </rs-layer></rs-group><rs-layer id="slider-19-slide-71-layer-7" data-type="image" data-xy="x:c;xo:0,0,20px,-82px;y:m,m,b,b;" data-text="w:normal;" data-dim="w:1400px,1100px,900px,650px;h:500px,393px,321px,232px;" data-basealign="slide" data-rsp_o="off" data-rsp_bd="off" data-frame_0="y:30px;" data-frame_1="sp:1000;" data-frame_999="o:0;e:power4.inOut;st:w;sp:1000;" style="z-index:5;"><img decoding="async" src="//gizmos.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" alt="w" class="tp-rs-img rs-lazyload" width="1400" height="500" data-lazyload="//gizmos.qodeinteractive.com/wp-content/uploads/2022/10/home-8-banner-slider-photo-3.png" data-no-retina>
-    </rs-layer> </rs-slide>
+    </rs-layer> 
+  </rs-slide>
     </rs-slides>
     </rs-module>
     
@@ -920,17 +952,17 @@ Gaming Consoles<br /> &amp; Gamepads	</h4>
     <div class="qodef-e-product-list-slider-holder">
     <div class="qodef-shortcode qodef-m  qodef-woo-shortcode qodef-woo-product-list qodef-item-layout--info-on-side   qodef-category-filter-type--simple    qodef-grid qodef-swiper-container  qodef-gutter--small qodef-col-num--3 qodef-item-layout--info-on-side qodef--no-bottom-space qodef-pagination--off qodef-responsive--predefined" data-options="{&quot;slidesPerView&quot;:&quot;3&quot;,&quot;spaceBetween&quot;:20,&quot;loop&quot;:true,&quot;autoplay&quot;:true,&quot;speed&quot;:&quot;&quot;,&quot;speedAnimation&quot;:&quot;&quot;,&quot;slideAnimation&quot;:&quot;&quot;,&quot;outsideNavigation&quot;:&quot;yes&quot;,&quot;unique&quot;:&quot;3&quot;,&quot;plugin&quot;:&quot;gizmos_core&quot;,&quot;module&quot;:&quot;plugins\/woocommerce\/shortcodes&quot;,&quot;shortcode&quot;:&quot;product-list&quot;,&quot;post_type&quot;:&quot;product&quot;,&quot;next_page&quot;:&quot;2&quot;,&quot;max_pages_num&quot;:1,&quot;product_list_title&quot;:&quot;Trending Products&quot;,&quot;behavior&quot;:&quot;slider&quot;,&quot;images_proportion&quot;:&quot;full&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_responsive&quot;:&quot;predefined&quot;,&quot;space&quot;:&quot;small&quot;,&quot;slider_navigation&quot;:&quot;yes&quot;,&quot;slider_pagination&quot;:&quot;no&quot;,&quot;posts_per_page&quot;:&quot;4&quot;,&quot;orderby&quot;:&quot;date&quot;,&quot;order&quot;:&quot;ASC&quot;,&quot;additional_params&quot;:&quot;tax&quot;,&quot;tax&quot;:&quot;product_cat&quot;,&quot;tax_slug&quot;:&quot;new-arrivals&quot;,&quot;layout&quot;:&quot;info-on-side&quot;,&quot;title_tag&quot;:&quot;h5&quot;,&quot;enable_category&quot;:&quot;yes&quot;,&quot;enable_banner&quot;:&quot;no&quot;,&quot;enable_compare_product&quot;:&quot;yes&quot;,&quot;enable_wishlist&quot;:&quot;yes&quot;,&quot;enable_filter&quot;:&quot;no&quot;,&quot;pagination_type&quot;:&quot;no-pagination&quot;,&quot;category_filter_type&quot;:&quot;simple&quot;,&quot;enable_ordering_filter&quot;:&quot;no&quot;,&quot;enable_results_count&quot;:&quot;no&quot;,&quot;custom_grid&quot;:&quot;no&quot;,&quot;object_class_name&quot;:&quot;GizmosCore_Product_List_Shortcode&quot;,&quot;additional_query_args&quot;:{&quot;tax_query&quot;:[{&quot;taxonomy&quot;:&quot;product_cat&quot;,&quot;field&quot;:&quot;slug&quot;,&quot;terms&quot;:&quot;new-arrivals&quot;}]},&quot;taxonomy_filter&quot;:&quot;product_cat&quot;,&quot;space_value&quot;:10}">
     <div class="qodef-m-top">
-    <h3 class="qodef-m-product-list-title">Best Sellers</h3>
+    <h3 class="qodef-m-product-list-title">{{ __('locale.Best Sellers') }}s</h3>
     <div class="qodef-swipper-nav-wrapper">
       <div class="qodef-m-button">
-        <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">shop now</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
+        <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual  qodef-html--link" href="{{url('/app/ecommerce/shop')}}"  target="_self"> <span class="qodef-m-text">{{ __('locale.Shop Now') }}</span> <span class="qodef-m-icon"><svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><path d="M11 5H1a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2Z" /><path d="M7 11V1a1 1 0 1 0-2 0v10a1 1 0 0 0 2 0Z" /></g></svg></span></a> </div>
       
      </div>
       </div>
       <section id="best-sellers" class="qodef-grid-inner swiper-wrapper clear list-view d-flex  flex-nowrap">
         @include('content/home-best-sellers')
     </section>
-
+    
   </div>
   </div> </div>
   </div>

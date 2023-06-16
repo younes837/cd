@@ -136,7 +136,7 @@ class CommandeController extends Controller
         $ligne_commande=ligneCommande::join('produit','produit.id',"produit_commande.produit_id")
   
         ->where('commande_id',$id)
-        ->select('produit.photo','produit.libelle','produit.brand_id','produit.price','produit_commande.quantite')
+        ->select('produit.photo','produit.libelle','produit.brand_id','produit.price','produit_commande.quantite','produit.promo')
         ->get();
         $commande=Commande::find($id);
         $user=User::find($commande->user_id);

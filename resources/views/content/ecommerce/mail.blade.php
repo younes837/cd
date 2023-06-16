@@ -17,9 +17,9 @@
         <div class="dropdown-header d-flex">
           <h4 class="notification-title mb-0 me-auto">Notifications</h4>
           @if (Auth::check())
-          <div class="badge rounded-pill badge-light-primary">{{count(App\Models\Mails::where('user_id',Auth::user()->id)->get())}} New</div>
+          <div class="badge rounded-pill badge-light-primary">{{count(App\Models\Mails::where('user_id',Auth::user()->id)->get())}} {{ __('locale.New') }}</div>
           @else
-          <div class="badge rounded-pill badge-light-primary">0 New</div>
+          <div class="badge rounded-pill badge-light-primary">0 {{ __('locale.New') }}</div>
 
           @endif
         </div>

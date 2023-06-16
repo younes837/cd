@@ -90,10 +90,10 @@
                           <dt class="col-sm-4 fw-bolder mb-1">Contact:</dt>
                           <dd class="col-sm-8 mb-1">+212-{{$user->phone}}</dd>
           
-                          <dt class="col-sm-4 fw-bolder mb-1">Country:</dt>
+                          <dt class="col-sm-4 fw-bolder mb-1">{{ __('locale.Country') }}:</dt>
                           <dd class="col-sm-8 mb-1">Morroco</dd>
           
-                          <dt class="col-sm-4 fw-bolder mb-1">city:</dt>
+                          <dt class="col-sm-4 fw-bolder mb-1">{{ __('locale.City') }}:</dt>
                           <dd class="col-sm-8 mb-1">{{$commande->ville}}</dd>
           
                           <dt class="col-sm-4 fw-bolder mb-1">Zipcode:</dt>
@@ -110,7 +110,7 @@
                               <dt class="col-sm-4 fw-bolder mb-1">VAT Number:</dt>
                               <dd class="col-sm-8 mb-1">SDF754K77</dd>
               
-                              <dt class="col-sm-4 fw-bolder mb-1">Address:</dt>
+                              <dt class="col-sm-4 fw-bolder mb-1">{{ __('locale.Address') }}:</dt>
                               <dd class="col-sm-8 mb-1 text-muted">{{$commande->adress}}</dd>
                             </dl>
                       </div>
@@ -118,7 +118,7 @@
             </div> 
         </div>
         <div class="col-xl-8 col-lg-7 col-md-5 order-1 order-md-0">
-            <h5 class="mx-1 fw-bolder">Ordred Products</h5>
+            <h5 class="mx-1 fw-bolder">{{ __('locale.Ordered Product') }}</h5>
             <div class="card">
 
            
@@ -127,10 +127,10 @@
                   <thead>
                     <tr>
                       
-                      <th >Product</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Amount</th>
+                      <th>{{ __('locale.Product') }}</th>
+                      <th>{{ __('locale.Price') }}</th>
+                      <th>{{ __('locale.Quantity') }}</th>
+                      <th>Total</th>
                      
                     </tr>
                   </thead>
@@ -151,9 +151,21 @@
                                   </div>
                               </div>
                           </td>
-                          <td>${{$item->price}}</td>
+                          <td>@if ($item->promo)
+                            <strike class="text-danger">${{$item->price}}</strike>
+                            <span class="">${{$item->price-$item->price*($item->promo/100)}}</span></h6>
+                          @else
+                          ${{$item->price}}
+                          @endif</td>
                           <td>{{$item->quantite}}</td>
-                          <td>${{$item->price*$item->quantite}}</td>
+                          <td>
+                            @if ($item->promo)
+                            ${{($item->price-$item->price*($item->promo/100))*$item->quantite}}
+                            @else
+                              
+                            ${{$item->price*$item->quantite}}
+                            @endif
+                          </td>
                          
       
                          </tr>
@@ -209,7 +221,7 @@
                               
                             </div>
                             <div class="transaction-percentage">
-                              <h6 class="transaction-title mt-1">Order Date</h6>
+                              <h6 class="transaction-title mt-1">{{ __('locale.Order Date') }}</h6>
                               
                             </div>
                           </div>
@@ -223,7 +235,7 @@
                               </div>
                             </div>
                             <div class="transaction-percentage">
-                              <h6 class="transaction-title mt-1">Deliver City</h6>
+                              <h6 class="transaction-title mt-1">{{ __('locale.Deliver City') }}</h6>
                               
                             </div>
                           </div>
@@ -237,7 +249,7 @@
                               </div>
                             </div>
                             <div class="transaction-percentage">
-                              <h6 class="transaction-title mt-1">Order Amount</h6>
+                              <h6 class="transaction-title mt-1">{{ __('locale.Order Amount') }}</h6>
                               
                             </div>
                           </div>
@@ -251,7 +263,7 @@
                               </div>
                             </div>
                             <div class="transaction-percentage">
-                              <h6 class="transaction-title mt-1">Order Status</h6>
+                              <h6 class="transaction-title mt-1">{{ __('locale.Order Status') }}</h6>
                            
                             </div>
                           </div>

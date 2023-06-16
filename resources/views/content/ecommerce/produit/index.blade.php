@@ -38,12 +38,12 @@
     @section('content')
         <!-- Hoverable rows start -->
         <div class="row">
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-4 col-sm-6">
             <div class="card">
               <div class="card-body d-flex align-items-center justify-content-between">
                 <div>
                   <h3 class="fw-bolder mb-75">{{count(App\Models\Produit::all())}}</h3>
-                  <span>Total Products</span>
+                  <span>{{ __('locale.Total Products') }}</span>
                 </div>
                 <div class="avatar bg-light-primary p-50">
                   <span class="avatar-content">
@@ -53,16 +53,31 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-sm-6">
+          <div class="col-lg-4 col-sm-6">
             <div class="card">
               <div class="card-body d-flex align-items-center justify-content-between">
                 <div>
                   <h3 class="fw-bolder mb-75">{{count(App\Models\Produit::where('stock',0)->get())}}</h3>
-                  <span>Products Out of Stock</span>
+                  <span>{{ __('locale.Products Out of Stock') }}</span>
                 </div>
                 <div class="avatar bg-light-danger p-50">
                   <span class="avatar-content">
                     <i data-feather="x" class="font-medium-4"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="card">
+              <div class="card-body d-flex align-items-center justify-content-between">
+                <div>
+                  <h3 class="fw-bolder mb-75">{{count(App\Models\Produit::whereNotNull('promo')->get())}}</h3>
+                  <span>{{ __('locale.Discounted Products') }}</span>
+                </div>
+                <div class="avatar bg-light-success p-50">
+                  <span class="avatar-content">
+                    <i data-feather="percent" class="font-medium-4"></i>
                   </span>
                 </div>
               </div>
@@ -87,7 +102,7 @@
                 <h4 class="card-title">Categories</h4>
               </div>
               <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
-               <span class="badge rounded-pill bg-success">{{count(App\Models\Produit::all())}} Products</span>
+               <span class="badge rounded-pill bg-success">{{count(App\Models\Produit::all())}} {{ __('locale.Products') }}</span>
               </div>
             </div>
             <div class="card-body">
@@ -150,19 +165,19 @@
             <div class="col-1 mb-1"></div>
             <div class="col-4 col-xs-6 mb-1 ">
               <select class="form-select" name="filter_categorie"   id="select-categorie">
-                <option value="all">All</option>
+                <option value="all">{{ __('locale.all') }}</option>
                 @foreach ($categories as $categorie)
                   <option value="{{$categorie->id}}">{{$categorie->name}}</option>
                 @endforeach
               </select> 
             </div>
             <div class="col-4 col-xs-6 mb-1">
-              <input type="text" id="search" class="form-control" placeholder="Search">
+              <input type="text" id="search" class="form-control" placeholder="{{ __('locale.Search') }}">
             
             </div>
             <div class="col-3 col-xs-6 mb-1">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#large">
-                Add Product
+                {{ __('locale.Add Product') }}
               </button>
             </div>
         </div>
@@ -179,7 +194,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
 
-                    <h4 class="modal-title" id="myModalLabel17">Add Product</h4>
+                    <h4 class="modal-title" id="myModalLabel17">{{ __('locale.Add Product') }}</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -188,7 +203,7 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">Name</label>
+                            <label for="first-name-column">{{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
@@ -200,7 +215,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="last-name-column">Picture</label>
+                            <label for="last-name-column">{{ __('locale.Picture') }}</label>
                             <input
                               type="file"
                               id="last-name-column"
@@ -230,7 +245,7 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="company-column">Rating</label>
+                            <label for="company-column">{{ __('locale.Rating') }}</label>
                             <input
                               type="number"
                               id="rating-column"
@@ -243,9 +258,9 @@
                         </div>
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="email-id-column">Price</label>
+                            <label for="email-id-column">{{ __('locale.Price') }}</label>
                             <input
-                              type="price"
+                              type="number"
                               id="price-id-column"
                               class="form-control"
                               name="price"
@@ -272,13 +287,24 @@
                             </select>
                     </div>
                     <div class="col-md-6 col-12">
-                        <label class="form-label" for="selectDefault">Brand</label>
+                        <label class="form-label" for="selectDefault">{{ __('locale.Brand') }}</label>
                         <select class="form-select " name="brand" id="selectDefault">
                             <option value="">Brand</option>
                                     @foreach($brands as $brand)
                                     <option value="{{$brand->id}}">{{$brand->name}}</option>
                                     @endforeach
                             </select>
+                    </div>
+                    <div class="col-md-12 col-12">
+                        <label class="form-label" for="selectDefault">{{ __('locale.Discount') }} (%)</label>
+                        <input
+                              type="number"
+                              id="price-id-column"
+                              class="form-control"
+                              name="promo"
+                              placeholder="Discount"
+                            />
+                            <span class="text-secondary">{{ __('locale.Left this field blank in case there is no discount') }}</span>
                     </div>
 
                     </div>

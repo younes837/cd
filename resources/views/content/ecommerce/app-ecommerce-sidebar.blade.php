@@ -6,14 +6,38 @@
     </div>
     <div class="card">
       <div class="card-body">
+
+        {{-- Promotion Filter --}}
+        <div class="multi-range-price">
+          
+          <ul class="list-unstyled price-range" id="Promotion">
+            <li>
+              <div class="form-check">
+                <input type="radio" id="discount" name="discount" value="all" class="form-check-input" checked  />
+                <label class="form-check-label" for="priceAll">{{ __('locale.all') }}</label>
+              </div>
+            </li>
+            <li>
+              <div class="form-check">
+                <input type="radio" id="discount" name="discount" value="discount" class="form-check-input" />
+                <label class="form-check-label" for="priceRange1">{{ __('locale.Discount') }}</label>
+              </div>
+            </li>
+     
+          </ul>
+        </div>
+
+        {{-- Promotion Filter --}}
+
+
         <!-- Price Filter starts -->
         <div class="multi-range-price">
-          <h6 class="filter-title mt-0">Multi Range</h6>
+          <h6 class="filter-title mt-0">{{ __('locale.Multi Range') }}</h6>
           <ul class="list-unstyled price-range" id="price-range">
             <li>
               <div class="form-check">
                 <input type="radio" id="priceAll" name="price-range" value="all" class="form-check-input" checked  />
-                <label class="form-check-label" for="priceAll">All</label>
+                <label class="form-check-label" for="priceAll">{{ __('locale.all') }}</label>
               </div>
             </li>
             <li>
@@ -60,7 +84,7 @@
             <li>
               <div class="form-check">
                 <input type="radio" id="all" value="all" name="categorie" class="form-check-input" checked />
-                <label class="form-check-label" for="all">All</label>
+                <label class="form-check-label" for="all">{{ __('locale.all') }}</label>
               </div>
             </li>
             @foreach($categories as $categorie)
@@ -83,10 +107,10 @@
   
         <!-- Rating starts -->
         <div id="ratings">
-          <h6 class="filter-title">Brands</h6>
+          <h6 class="filter-title">{{ __('locale.Brand') }}</h6>
           <div class="list-unstyled categories-list">
             <li><input type="radio" id="all" value="all" name="brand" class="form-check-input" checked />
-              <label class="form-check-label" for="all">All</label>
+              <label class="form-check-label" for="all">{{ __('locale.all') }}</label>
             </li>  @foreach($brand as $item)
             <li>
               <div class="form-check">

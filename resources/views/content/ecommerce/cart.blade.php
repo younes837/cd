@@ -8,8 +8,8 @@
   <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
     <li class="dropdown-menu-header">
       <div class="dropdown-header d-flex">
-        <h4 class="notification-title mb-0 me-auto">My Cart</h4>
-        <div class="badge rounded-pill badge-light-primary"><span id="second-count">{{ count((array) session('cart')) }}</span> Items</div>
+        <h4 class="notification-title mb-0 me-auto">{{ __('locale.My Cart') }}</h4>
+        <div class="badge rounded-pill badge-light-primary"><span id="second-count">{{ count((array) session('cart')) }}</span> {{ __('locale.Items') }}</div>
       </div>
     </li>
     <li class="scrollable-container media-list">
