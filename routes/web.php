@@ -200,3 +200,6 @@ Route::fallback(function () {
     return view('content/error');
 });
 Route::get('lang/{locale}', [StaterkitController::class, 'swap']);
+
+Route::post('/check', [CommandeController::class, 'check'])->name(
+    'paymentcheck')->middleware('auth');

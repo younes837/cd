@@ -383,6 +383,7 @@ var promo = $('input[name="discount"]:checked').val();
   fetch_data(page,query,price,sort,categorie,brand,promo);
 });
 $('input:radio[name="price-range"]').change(function(){
+  $('#hidden_page').val(1);
   var price = $('input[name="price-range"]:checked').val();
   $('#items').html("text")
   event.preventDefault();
@@ -405,6 +406,7 @@ var promo = $('input[name="discount"]:checked').val();
 
 
 $(document).on('keyup', '#search', function(){
+  $('#hidden_page').val(1);
  var query = $(this).val();
  var page=$('#hidden_page').val();
  var price = $('input[name="price-range"]:checked').val();
@@ -423,6 +425,7 @@ $(document).on('keyup', '#search', function(){
 
       
 $(document).on('click', '#lowest', function(){
+
   $('.active-sorting').text('Oldest')
   var price = $('input[name="price-range"]:checked').val();
   var query=$('#search').val();
@@ -470,6 +473,7 @@ $(document).on('click', '#featured', function(){
 
 });
 $('input:radio[name="categorie"]').change(function(){
+  $('#hidden_page').val(1);
   var price = $('input[name="price-range"]:checked').val();
   var categorie = $('input[name="categorie"]:checked').val();
   
@@ -488,6 +492,7 @@ $('input:radio[name="categorie"]').change(function(){
 
 });
 $('input:radio[name="brand"]').change(function(){
+  $('#hidden_page').val(1);
   var price = $('input[name="price-range"]:checked').val();
   var categorie = $('input[name="categorie"]:checked').val();
   var brand = $('input[name="brand"]:checked').val();
@@ -505,6 +510,7 @@ $('input:radio[name="brand"]').change(function(){
 
 });
 $('input:radio[name="discount"]').change(function(){
+  $('#hidden_page').val(1);
   var promo = $('input[name="discount"]:checked').val();
   var price = $('input[name="price-range"]:checked').val();
   var categorie = $('input[name="categorie"]:checked').val();

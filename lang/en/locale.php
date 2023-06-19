@@ -126,6 +126,7 @@ return [
     "Calendar" => "Calendar",
     "Ecommerce" => "Ecommerce",
     "Shop" => "Shop",
+    "Phone"=>"Phone",
 
     "Checkout" => "Checkout",
     "Starter kit" => "Starter kit",

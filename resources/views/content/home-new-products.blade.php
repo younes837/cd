@@ -58,13 +58,13 @@
              @else
                  <i data-feather="heart"></i>
              @endif 
-             <span>Wishlist</span>
+             <span>{{ __('locale.Wishlist') }}</span>
          </a>
            @endif
             <a href="{{ route('add_to_cart', $produit->id) }}"  class="btn btn-primary btn-cart">
               <i data-feather="shopping-cart"></i>
              
-              <span class="add-to-cart">Add to cart</span>
+              <span class="add-to-cart">{{ __('locale.Add to cart') }}</span>
             </a>
           </div>
         </div> 

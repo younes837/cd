@@ -40,8 +40,12 @@ class AuthenticationController extends Controller
     }
     public function register()
     {
-        $villes=Ville::all();
-            return view('content/authentication/auth-register-basic',compact('villes'));
+        if (Auth::check()) {
+            return redirect('app/ecommerce/shop');
+        } else {
+            $villes=Ville::all();
+                return view('content/authentication/auth-register-basic',compact('villes'));
+        }
         
     }
     public function postsignup(Request $request)

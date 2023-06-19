@@ -1,9 +1,14 @@
 @php
 $configData = Helper::applClasses();
 @endphp
+<style>
+    #navbar3, #main-menu-navigation{
+    background-color: #283046;
+  }
+</style>
 <div
   class="main-menu menu-fixed {{ $configData['theme'] === 'dark' || $configData['theme'] === 'semi-dark' ? 'menu-dark' : 'menu-light' }} menu-accordion menu-shadow"
-  data-scroll-to-active="true">
+  data-scroll-to-active="true" id="navbar3">
   <div class="navbar-header">
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item me-auto">
@@ -13,7 +18,7 @@ $configData = Helper::applClasses();
         </a>
       </li>
       <li class="nav-item nav-toggle">
-        <a class="nav-link modern-nav-toggle pe-0" data-toggle="collapse">
+        <a class="nav-link modern-nav-toggle pe-0" style="margin-top: 37px" data-toggle="collapse">
           <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
           <i class="d-none d-xl-block collapse-toggle-icon font-medium-4 text-primary" data-feather="disc"
             data-ticon="disc"></i>
@@ -22,7 +27,7 @@ $configData = Helper::applClasses();
     </ul>
   </div>
   <div class="shadow-bottom"></div>
-  <div class="main-menu-content">
+  <div class="main-menu-content" style="margin-top: 10px">
     <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
       {{-- <h6 class="m-2">Dashboard</h6> --}}
       {{-- Foreach menu item starts --}}
@@ -43,7 +48,7 @@ $configData = Helper::applClasses();
             @endphp
             <li
               class="nav-item {{ $custom_classes }} {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }}">
-              <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0)' }}" class="d-flex align-items-center"
+              <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0)' }}" class="d-flex align-items-center text-light text-muted"
                 target="{{ isset($menu->newTab) ? '_blank' : '_self' }}">
                 <i data-feather="{{ $menu->icon }}"></i>
                 <span class="menu-title text-truncate">{{ __('locale.'.$menu->name) }}</span>

@@ -133,12 +133,12 @@
                       <div class="row">
                         <div class="col-md-6 col-12">
                           <div class="form-group">
-                            <label for="first-name-column">  {{ __('locale.nom') }}</label>
+                            <label for="first-name-column">  {{ __('locale.Name') }}</label>
                             <input
                               type="text"
                               id="first-name-column"
                               class="form-control"
-                              placeholder="{{ __('locale.nom') }}"
+                              placeholder="{{ __('locale.Name') }}"
                               name="name"
                             />
                             @if ($errors->has('name'))
@@ -174,8 +174,8 @@
                               type="Password"
                               id="country-floating"
                               class="form-control"
-                              name="{{ __('locale.Password') }}"
-                              placeholder="Password"
+                              name="password"
+                              placeholder="{{ __('locale.Password') }}"
                             />
                             @if ($errors->has('password'))
                             <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -189,8 +189,8 @@
                               type="text"
                               id="company-column"
                               class="form-control"
-                              name="{{ __('locale.Address') }}"
-                              placeholder="address"
+                              name="address"
+                              placeholder="{{ __('locale.Address') }}"
                             />
                             @if ($errors->has('address'))
                             <span class="text-danger">{{ $errors->first('address') }}</span>
@@ -204,8 +204,8 @@
                               type="number"
                               id="email-id-column"
                               class="form-control"
-                              name="{{ __('locale.Phone') }}"
-                              placeholder="phone"
+                              name="phone"
+                              placeholder="{{ __('locale.Phone') }}"
                             />
                             @if ($errors->has('phone'))
                             <span class="text-danger">{{ $errors->first('phone') }}</span>

@@ -183,15 +183,15 @@
 <div class="col-xl-3 col-md-4 col-12 invoice-actions mt-md-0 mt-2">
   <div class="card">
     <div class="card-body">
-      <button class="btn btn-primary w-100 mb-75" data-bs-toggle="modal" data-bs-target="#send-invoice-sidebar">
+      {{-- <button class="btn btn-primary w-100 mb-75" data-bs-toggle="modal" data-bs-target="#send-invoice-sidebar">
         Send Invoice
-      </button>
-      <a href="{{url('download_invoice/'.$commande->id)}}" class="btn btn-outline-secondary w-100 btn-download-invoice mb-75">Download</a>
-      <a class="btn btn-outline-secondary w-100 mb-75" href="{{url('app/invoice/print')}}" target="_blank"> Print </a>
-      <a class="btn btn-outline-secondary w-100 mb-75" href="{{url('app/invoice/edit')}}"> Edit </a>
-      <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#add-payment-sidebar">
+      </button> --}}
+      <a href="{{url('download_invoice/'.$commande->id)}}" class="btn btn-success w-100 btn-download-invoice mb-75">Download</a>
+      {{-- <a class="btn btn-outline-secondary w-100 mb-75" href="{{url('app/invoice/print')}}" target="_blank"> Print </a>
+      <a class="btn btn-outline-secondary w-100 mb-75" href="{{url('app/invoice/edit')}}"> Edit </a> --}}
+      {{-- <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#add-payment-sidebar">
         Add Payment
-      </button>
+      </button> --}}
     </div>
   </div>
 </div>
@@ -202,11 +202,7 @@
   <div class="modal-dialog sidebar-lg">
     <div class="modal-content p-0">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
-      <div class="modal-header mb-1">
-        <h5 class="modal-title">
-          <span class="align-middle">Send Invoice</span>
-        </h5>
-      </div>
+      
       <div class="modal-body flex-grow-1">
         <form>
           <div class="mb-1">
@@ -280,11 +276,7 @@ We would appreciate payment of this invoice by 05/11/2019</textarea
   <div class="modal-dialog sidebar-lg">
     <div class="modal-content p-0">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
-      <div class="modal-header mb-1">
-        <h5 class="modal-title">
-          <span class="align-middle">Add Payment</span>
-        </h5>
-      </div>
+   
       <div class="modal-body flex-grow-1">
         <form>
           <div class="mb-1">

@@ -88,18 +88,8 @@
     <div class="card">
       <div class="card-body">
         <label class="section-label form-label mb-1">Options</label>
-        <div class="coupons input-group input-group-merge">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Coupons"
-            aria-label="Coupons"
-            aria-describedby="input-coupons"
-          />
-          <span class="input-group-text text-primary ps-1" id="input-coupons">Apply</span>
-        </div>
-        <hr />
-        <div class="price-details">
+      
+        <hr />      <div class="price-details">
           <h6 class="price-title">Price Details</h6>
           <ul class="list-unstyled">
             <li class="price-detail">

@@ -527,7 +527,7 @@ class StaterkitController extends Controller
                         ->delete();
                 }
                 $wishlist = $user->produits;
-                $produits=Produit::all()->take(4);
+                $produits=Produit::latest()->take(4)->get();
                 $produits2=Produit::all()->take(6);
                 return view('content/home-new-products',compact('produits','produits2','wishlist'));
             }elseif($request->details == 'top'){
@@ -544,7 +544,7 @@ class StaterkitController extends Controller
                 }
                 $wishlist = $user->produits;
                 $produits=Produit::all()->take(4);
-                $produits2=Produit::all()->take(6);
+                $produits2=Produit::where('rating',5)->get();
                 return view('content/home-top-products',compact('produits','produits2','wishlist'));
             }
             elseif($request->details == 'best'){
@@ -562,7 +562,16 @@ class StaterkitController extends Controller
                 $wishlist = $user->produits;
                 $produits=Produit::all()->take(4);
                 $produits2=Produit::all()->take(6);
-                return view('content/home-best-sellers',compact('produits','produits2','wishlist'));
+                $bestSellingProduct = Produit::select('produit.*')
+            ->join('produit_commande', 'produit_commande.produit_id', '=', 'produit.id')
+            ->join('commande', 'produit_commande.commande_id', '=', 'commande.id')
+            ->where('commande.etat_id',2)
+            ->groupBy('produit.id', 'produit.libelle','produit.photo','produit.promo','produit.stock','produit.price','produit.rating','produit.categorie_id','produit.brand_id','produit.propriete_id','produit.description','produit.created_at','produit.updated_at')
+            ->orderByRaw('SUM(produit_commande.quantite) DESC')
+            ->take(10)
+            ->get();
+
+                return view('content/home-best-sellers',compact('produits','produits2','wishlist',"bestSellingProduct"));
             }
             
             elseif ($request->details == 'remove') {

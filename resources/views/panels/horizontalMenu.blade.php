@@ -2,6 +2,9 @@
 $configData = Helper::applClasses();
 @endphp
 {{-- Horizontal Menu --}}
+<style>
+  
+</style>
 <div class="horizontal-menu-wrapper">
   <div class="header-navbar navbar-expand-sm navbar navbar-horizontal
   {{$configData['horizontalMenuClass']}}
@@ -28,7 +31,7 @@ $configData = Helper::applClasses();
     </div>
     <div class="shadow-bottom"></div>
     <!-- Horizontal menu content-->
-    <div class="navbar-container main-menu-content" data-menu="menu-container">
+    <div class="navbar-container main-menu-content " data-menu="menu-container" id="menu3">
       <ul class="nav navbar-nav d-flew justify-content-center" id="main-menu-navigation" data-menu="menu-navigation">
       {{-- Foreach menu item starts --}}
         @if(isset($menuData[1]))

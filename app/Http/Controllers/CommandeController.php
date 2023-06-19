@@ -5,6 +5,7 @@ use App\Models\Commande;
 use App\Models\User;
 use App\Models\ligneCommande;
 use App\Models\Produit;
+use App\Models\Facture;
 use App\Models\Contact;
 use App\Models\Mails;
 use App\Mail\SignUp;
@@ -58,6 +59,7 @@ class CommandeController extends Controller
                 $product->save();
             }
         }
+        Facture::create(['commande_id'=>$commande->id,"date"=>date('Y-m-d H:i:s')]);
         $user=User::find($commande->user_id);
         Mail::to($user->email)->send(new SignUp($data));
         Mails::create([
@@ -239,6 +241,18 @@ class CommandeController extends Controller
 
         return view('content/ecommerce/admin-contact',['pageConfigs'=>$pageConfigs,"comments"=>$comments]);
     }
+
+    public function check(Request $request){
+            $carte=DB::table('payment')->where('name',$request->name)->where('numcarte',$request->numcarte)->where('experation',$request->experation)->where('code',$request->code)->first();
+            if($carte){
+    
+                return redirect()->back()->with('succes',"Product payed Succefully");
+            }
+            else{
+                return redirect()->back()->with('echoe',"Product No payed ");
+            }
+        }
+    
 }
 
 

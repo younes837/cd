@@ -5,11 +5,17 @@
 @section('vendor-style')
 <!-- Vendor css files -->
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/nouislider.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.min.css')) }}">
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-  
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')) }}">
+        <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/swiper.min.css')) }}">
+        <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.min.css')) }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+        <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+
 @endsection
 @section('page-style')
 <style>
@@ -171,7 +177,7 @@
 
 
 <div id="step-payment" class="content" role="tabpanel" aria-labelledby="step-payment-trigger">
-  <form id="checkout-payment" class="list-view product-checkout" onsubmit="return false;">
+  <form id="checkout-payment" class="list-view product-checkout" action="{{url('/check')}}" method="post">
     <div class="payment-type">
       <div class="card">
         <div class="card-header flex-column align-items-start">
@@ -179,66 +185,68 @@
           <p class="card-text text-muted mt-25">Be sure to click on correct payment option</p>
         </div>
         <div class="card-body">
-          
+
           <div class="customer-cvv mt-1 row row-cols-lg-auto w-50 d-flex justify-content-center">
             <div class="row">
-              <div class="col-md-12 col-12">
-                <div class="mb-1">
-                  <label class="form-label" for="first-name-column">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    class="form-control"
-                    placeholder="Name"
-                    name="fname-column"
-                  />
+                    @csrf
+                    <div class="col-md-12 col-12">
+                        <div class="mb-1">
+                        <label class="form-label" for="first-name-column">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            placeholder="Name"
+                            name="name"
+                        />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-12">
+                        <div class="mb-1">
+                        <label class="form-label" for="last-name-column">Card Number</label>
+                        <input
+                            type="number"
+                            id="card_number"
+                            class="form-control"
+                            placeholder="**** **** **** ****"
+                            name="numcarte"
+                        />
+                        </div>
+                    </div>
+                <div class="col-md-6 col-12">
+                    <div class="mb-1">
+                    <label class="form-label" for="city-column">Expiration (mm/yy)</label>
+                    <input type="number" id="expiration" class="form-control" placeholder="mm/yy" name="experation"   />
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-12 col-12">
-                <div class="mb-1">
-                  <label class="form-label" for="last-name-column">Card Number</label>
-                  <input
-                    type="number"
-                    id="card_number"
-                    class="form-control"
-                    placeholder="**** **** **** ****"
-                    name="lname-column"
-                  />
+                <div class="col-md-6 col-12">
+                    <div class="mb-1">
+                    <label class="form-label" for="country-floating">Security Code</label>
+                    <input
+                        type="number"
+                        id="security"
+                        class="form-control"
+                        name="code"
+                        placeholder="Security Code"
+                    />
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="mb-1">
-                  <label class="form-label" for="city-column">Expiration (mm/yy)</label>
-                  <input type="number" id="expiration" class="form-control" placeholder="mm/yy" name="city-column" />
+
+
+                <hr class="my-2"/>
+                <div class="gift-card mb-25">
+                    <p class="card-text">
+
+                        <button type="submit" class="btn btn-primary me-1" onClick="this.form.submit()" >Submit</button>
+                        <button type="reset" class="btn btn-outline-secondary">Reset</button>
+
+
+                    </p>
                 </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="mb-1">
-                  <label class="form-label" for="country-floating">Security Code</label>
-                  <input
-                    type="number"
-                    id="security"
-                    class="form-control"
-                    name="country-floating"
-                    placeholder="Security Code"
-                  />
-                </div>
-              </div>
-             
             </div>
-          </div>
-          
-          <hr class="my-2"/>
-          <div class="gift-card mb-25">
-            <p class="card-text">
-            
-                <button type="reset" class="btn btn-primary me-1">Submit</button>
-                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-           
-            
-            </p>
-          </div>
-        </div>
+    </div>
+  </div>
       </div>
     </div>
     <div class="amount-payable checkout-options ">
@@ -313,14 +321,37 @@
       </div>
     </div>
   </form>
-</div>
+  @if(Session::has('succes'))
+                  <script>
+                      $(document).ready(function () {
+                      Swal.fire('Succes!','Commande Payed!','success',{
 
+                  confirmButtonClass: 'btn btn-primary',
+                  buttonsStyling: !1
+                  });
+                  });
+                  </script>
+    @elseif(Session::has('echoe'))
+    <script>
+                      $(document).ready(function () {
+                      Swal.fire('Erreur!','Card Information are wrong !','error',{
+
+                  confirmButtonClass: 'btn btn-primary',
+                  buttonsStyling: !1
+                  });
+                  });
+                  </script>
+      @endif
+</div>
 
 @endsection
 
 @section('vendor-script')
 <!-- Vendor js files -->
 <script>
+
+
+
   var count=1
   $('#name').on('keyup',function () {
     $('.name').text($(this).val().toUpperCase())
@@ -328,7 +359,7 @@
   $('#security').on('keyup',function () {
     $('.code').text($(this).val().toUpperCase())
   })
- 
+
   $('#card_number').keyup(function() {
                 var inputVal = $(this).val();
                 var formattedText = formatTextWithSpaces(inputVal);
@@ -366,7 +397,7 @@
                 return formattedDate;
             }
 
-  
+
 </script>
 <script src="{{ asset(mix('vendors/js/extensions/wNumb.min.js')) }}"></script>
 <script src="{{ asset(mix('vendors/js/extensions/nouislider.min.js')) }}"></script>
